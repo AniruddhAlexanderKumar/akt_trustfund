@@ -1,0 +1,81 @@
+import type { Metadata } from 'next'
+import { LegalPage, LegalSection } from '@/components/legal-page'
+import { site } from '@/lib/site'
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy',
+  description:
+    'How the Late Dr. Anil Kumar Thakur Foundation handles information submitted through this website.',
+  alternates: { canonical: '/privacy' },
+  robots: { index: false, follow: true },
+}
+
+export default function PrivacyPage() {
+  return (
+    <LegalPage title="Privacy Policy" updated="November 2026">
+      <LegalSection heading="About this policy">
+        <p>
+          This policy describes how {site.name} handles information in connection with this
+          website. The foundation is an initiative being established; this policy will be reviewed
+          and republished when the institution&rsquo;s formal structure is in place.
+        </p>
+      </LegalSection>
+
+      <LegalSection heading="What this website collects">
+        <p>
+          This website does not offer accounts, payments, newsletters or applications, and it does
+          not set cookies or run third-party analytics, advertising or tracking scripts.
+        </p>
+        <p>
+          The only information you can submit is through the enquiry form, which asks for your name,
+          email address, an optional telephone number, the subject of your enquiry and your message.
+          If the form is not accepting submissions, nothing you type is transmitted or stored.
+        </p>
+      </LegalSection>
+
+      <LegalSection heading="How enquiries are used">
+        <p>
+          When the enquiry form is open, your message is delivered by email to the foundation so
+          that it can be read and answered. It is used only to respond to your enquiry. It is not
+          sold, rented or used for marketing.
+        </p>
+        <p>
+          Messages are not stored in a database on this website. They exist in the foundation&rsquo;s
+          email correspondence for as long as is needed to handle the enquiry and any related
+          follow-up.
+        </p>
+      </LegalSection>
+
+      <LegalSection heading="Service providers">
+        <p>
+          Email delivery for the enquiry form is handled by a transactional email provider, which
+          processes the message content solely to deliver it. No other third party receives
+          information submitted through this website.
+        </p>
+      </LegalSection>
+
+      <LegalSection heading="Photography and external links">
+        <p>
+          Photographs on this website are published under the licences credited in the footer and
+          are linked to their source pages on Wikimedia Commons. Following such a link takes you to
+          an external website with its own privacy practices.
+        </p>
+      </LegalSection>
+
+      <LegalSection heading="Your choices">
+        <p>
+          You may ask what enquiry correspondence we hold about you, or ask for it to be deleted,
+          once the foundation&rsquo;s official contact channels are published. Requests can be made
+          through the enquiry form on the home page.
+        </p>
+      </LegalSection>
+
+      <LegalSection heading="Changes">
+        <p>
+          This policy will be updated on this page as the foundation is established and as its
+          enquiry handling develops.
+        </p>
+      </LegalSection>
+    </LegalPage>
+  )
+}
