@@ -17,12 +17,15 @@ export default function NotFound() {
           This page could not be found.
         </h1>
         <p className="body-copy mt-7 max-w-[52ch]">
-          The address you followed may have changed, or the page may not exist. The foundation
-          website is being developed, so some sections are still to be added.
+          The address you followed may have changed. The website now describes a single initiative:
+          raising ₹50,000 to support one student&rsquo;s education in Jamshedpur.
         </p>
-        <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:gap-4">
+        <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
           <Cta href="/" variant="dark">
-            Return to the home page
+            The Initiative
+          </Cta>
+          <Cta href="/#transparency" variant="dark">
+            Read the Ledger
           </Cta>
           <Cta href="/#contact" variant="dark">
             Contact

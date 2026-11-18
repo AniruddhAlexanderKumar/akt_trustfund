@@ -5,7 +5,7 @@
   --color-gold: #d9c49b;
   --color-ivory: #f5f0e5;
   --color-walnut: #493b32;
-  --color-sage: #78877a;
+  --color-sage: #5f6f60;
   --color-charcoal: #242923;
 
   --font-sans: var(--font-lato), ui-sans-serif, system-ui, sans-serif;
@@ -132,6 +132,43 @@
 
   .rise {
     animation: rise 900ms cubic-bezier(0.22, 0.72, 0.2, 1) both;
+  }
+}
+
+/* Scroll-reveal ---------------------------------------------------------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal] {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+    transition:
+      opacity 950ms cubic-bezier(0.22, 0.72, 0.2, 1),
+      transform 950ms cubic-bezier(0.22, 0.72, 0.2, 1);
+  }
+
+  .js [data-reveal="fade"] {
+    transform: none;
+  }
+
+  .js [data-reveal][data-reveal-delay="1"] {
+    transition-delay: 90ms;
+  }
+
+  .js [data-reveal][data-reveal-delay="2"] {
+    transition-delay: 180ms;
+  }
+
+  .js [data-reveal][data-reveal-delay="3"] {
+    transition-delay: 270ms;
+  }
+
+  .js [data-reveal][data-reveal-delay="4"] {
+    transition-delay: 360ms;
+  }
+
+  .js [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
   }
 }
 

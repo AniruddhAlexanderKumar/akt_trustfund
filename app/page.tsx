@@ -1,26 +1,26 @@
 import { Hero } from '@/components/hero'
-import { LegacyStory } from '@/components/legacy-story'
-import { Philosophy } from '@/components/philosophy'
-import { MedicalScholars } from '@/components/medical-scholars'
-import { Commitment } from '@/components/commitment'
-import { Geography } from '@/components/geography'
+import { Memory } from '@/components/memory'
+import { Campaign } from '@/components/campaign'
+import { UseOfFunds } from '@/components/use-of-funds'
 import { Transparency } from '@/components/transparency'
+import { Beneficiary } from '@/components/beneficiary'
+import { Status } from '@/components/status'
 import { ContactSection } from '@/components/contact-section'
-import { Closing } from '@/components/closing'
+import { FinalCta } from '@/components/final-cta'
 import { isContactConfigured } from '@/lib/contact'
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <LegacyStory />
-      <Philosophy />
-      <MedicalScholars />
-      <Commitment />
-      <Geography />
+      <Memory />
+      <Campaign />
+      <UseOfFunds />
       <Transparency />
+      <Beneficiary />
+      <Status />
       <ContactSection accepting={isContactConfigured()} />
-      <Closing />
+      <FinalCta />
     </>
   )
 }

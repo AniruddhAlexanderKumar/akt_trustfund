@@ -5,7 +5,7 @@ import { site } from '@/lib/site'
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description:
-    'How the Late Dr. Anil Kumar Thakur Foundation handles information submitted through this website.',
+    'How information submitted through this website is handled, and what the public ledger does and does not publish.',
   alternates: { canonical: '/privacy' },
   robots: { index: false, follow: true },
 }
@@ -15,9 +15,9 @@ export default function PrivacyPage() {
     <LegalPage title="Privacy Policy" updated="November 2026">
       <LegalSection heading="About this policy">
         <p>
-          This policy describes how {site.name} handles information in connection with this
-          website. The foundation is an initiative being established; this policy will be reviewed
-          and republished when the institution&rsquo;s formal structure is in place.
+          This policy describes how {site.name} handles information in connection with this website.
+          The initiative described here is independently coordinated, and this policy will be
+          reviewed as arrangements develop.
         </p>
       </LegalSection>
 
@@ -35,14 +35,27 @@ export default function PrivacyPage() {
 
       <LegalSection heading="How enquiries are used">
         <p>
-          When the enquiry form is open, your message is delivered by email to the foundation so
-          that it can be read and answered. It is used only to respond to your enquiry. It is not
-          sold, rented or used for marketing.
+          When the enquiry form is open, your message is delivered by email so that it can be read
+          and answered. It is used only to respond to your enquiry. It is not sold, rented or used
+          for marketing.
         </p>
         <p>
-          Messages are not stored in a database on this website. They exist in the foundation&rsquo;s
-          email correspondence for as long as is needed to handle the enquiry and any related
-          follow-up.
+          Messages are not stored in a database on this website. They exist in email correspondence
+          for as long as is needed to handle the enquiry and any related follow-up.
+        </p>
+      </LegalSection>
+
+      <LegalSection heading="The public ledger">
+        <p>
+          The transaction ledger publishes no personal information. Contributions and expenditure
+          appear only as anonymised references and labels, such as “Family Contributor 01”. No donor
+          name, telephone number, UPI identifier, bank detail or private transaction identifier is
+          published.
+        </p>
+        <p>
+          The identity of the student supported by the initiative is not published. No name,
+          photograph, school, address or document relating to a student appears on this website
+          without appropriate consent from a parent or guardian.
         </p>
       </LegalSection>
 
@@ -56,25 +69,21 @@ export default function PrivacyPage() {
 
       <LegalSection heading="Photography and external links">
         <p>
-          Photographs on this website are published under the licences credited in the footer and
-          are linked to their source pages on Wikimedia Commons. Following such a link takes you to
-          an external website with its own privacy practices.
+          The photograph on this website is published under the licence credited in the footer and is
+          linked to its source page on Wikimedia Commons. Following that link takes you to an
+          external website with its own privacy practices.
         </p>
       </LegalSection>
 
       <LegalSection heading="Your choices">
         <p>
-          You may ask what enquiry correspondence we hold about you, or ask for it to be deleted,
-          once the foundation&rsquo;s official contact channels are published. Requests can be made
-          through the enquiry form on the home page.
+          You may ask what enquiry correspondence is held about you, or ask for it to be deleted.
+          Requests can be made through the enquiry form on the home page.
         </p>
       </LegalSection>
 
       <LegalSection heading="Changes">
-        <p>
-          This policy will be updated on this page as the foundation is established and as its
-          enquiry handling develops.
-        </p>
+        <p>This policy will be updated on this page as the initiative develops.</p>
       </LegalSection>
     </LegalPage>
   )

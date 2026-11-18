@@ -1,50 +1,60 @@
+import { ShieldCheck } from 'lucide-react'
+import { FinancialSummaryTable, LedgerTable } from '@/components/ledger-table'
 import { Eyebrow } from '@/components/section-heading'
-import { transparency } from '@/lib/site'
+import { initiative } from '@/lib/initiative'
 
 export function Transparency() {
   return (
-    <section
-      id="transparency"
-      aria-labelledby="transparency-heading"
-      className="section bg-white"
-    >
+    <section id="transparency" aria-labelledby="transparency-heading" className="section bg-white">
       <div className="shell">
-        <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-6">
-            <Eyebrow>{transparency.eyebrow}</Eyebrow>
-            <h2 id="transparency-heading" className="display-2 mt-6 max-w-[18ch] text-forest">
-              {transparency.heading}
+        <div className="grid gap-8 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-5" data-reveal>
+            <Eyebrow>Transparency</Eyebrow>
+            <h2 id="transparency-heading" className="display-2 mt-6 max-w-[16ch] text-forest">
+              The money, in full.
             </h2>
           </div>
-          <div className="lg:col-span-6 lg:pt-14">
-            <div className="max-w-[56ch] space-y-5">
-              {transparency.paragraphs.map((paragraph) => (
-                <p key={paragraph} className="body-copy">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
+          <div className="lg:col-span-6 lg:col-start-7 lg:pt-14" data-reveal data-reveal-delay="1">
+            <p className="body-copy max-w-[52ch]">{initiative.transparencyIntro}</p>
           </div>
         </div>
 
-        <div className="mt-16 grid border-l border-t border-forest/15 sm:grid-cols-2 lg:grid-cols-3">
-          {transparency.items.map((item) => (
-            <article
-              key={item.title}
-              className="border-b border-r border-forest/15 px-6 py-8 lg:px-8"
-            >
-              <h3 className="font-serif text-[1.28rem] leading-snug text-forest">{item.title}</h3>
-              <p className="mt-2.5 text-[0.8rem] leading-relaxed text-walnut/60">{item.note}</p>
-              <p className="mt-5 flex gap-2 text-[0.76rem] leading-relaxed text-sage">
-                <span
-                  aria-hidden="true"
-                  className="mt-[0.45rem] h-1 w-1 shrink-0 rounded-full bg-gold"
-                />
-                {transparency.pending}
-              </p>
-            </article>
-          ))}
+        <div className="mt-12 max-w-2xl" data-reveal>
+          <h3 className="text-[0.56rem] font-bold uppercase tracking-[0.24em] text-sage">
+            Financial summary
+          </h3>
+          <div className="mt-4">
+            <FinancialSummaryTable />
+          </div>
         </div>
+
+        <div className="mt-12" data-reveal data-reveal-delay="1">
+          <h3 className="text-[0.56rem] font-bold uppercase tracking-[0.24em] text-sage">
+            Transaction ledger
+          </h3>
+          <div className="mt-4">
+            <LedgerTable />
+          </div>
+        </div>
+
+        <ul className="mt-10 grid gap-x-10 gap-y-5 border-t border-forest/12 pt-8 sm:grid-cols-2">
+          {initiative.ledgerRules.map((rule) => (
+            <li key={rule} className="flex gap-3">
+              <ShieldCheck
+                className="mt-0.5 h-4 w-4 shrink-0 text-gold"
+                aria-hidden="true"
+                strokeWidth={1.6}
+              />
+              <span className="text-[0.85rem] leading-[1.8] text-walnut/75">{rule}</span>
+            </li>
+          ))}
+        </ul>
+
+        <p className="mt-8 max-w-3xl border-l-2 border-forest/20 pl-5 text-[0.78rem] leading-relaxed text-walnut/55">
+          The ledger is maintained by the adult family member overseeing the funds, and is updated
+          only after a transaction has been verified. There are no editing controls or administrative
+          credentials on this website.
+        </p>
       </div>
     </section>
   )

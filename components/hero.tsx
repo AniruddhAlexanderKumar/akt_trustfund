@@ -8,7 +8,7 @@ export function Hero() {
     <section
       id="home"
       aria-labelledby="hero-heading"
-      className="relative isolate flex min-h-[86svh] flex-col justify-end overflow-hidden bg-forest text-ivory"
+      className="relative isolate flex min-h-[78svh] flex-col justify-end overflow-hidden bg-forest text-ivory"
     >
       <Image
         src={hero.image}
@@ -20,23 +20,26 @@ export function Hero() {
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-r from-forest/95 via-forest/85 to-forest/45"
+        className="absolute inset-0 bg-gradient-to-r from-forest/96 via-forest/88 to-forest/55"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-t from-forest via-forest/25 to-forest/45"
+        className="absolute inset-0 bg-gradient-to-t from-forest via-forest/30 to-forest/50"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-gold/35 to-transparent"
       />
 
-      <div className="shell relative w-full pb-14 pt-40 lg:pb-20 lg:pt-48">
+      <div className="shell relative w-full pb-14 pt-36 lg:pb-20 lg:pt-44">
         <p className="eyebrow rise text-gold">{hero.eyebrow}</p>
 
         <h1
           id="hero-heading"
-          className="display-1 rise mt-8 max-w-[19ch] text-ivory"
+          className="display-1 rise mt-8 max-w-[16ch] text-ivory"
           style={{ animationDelay: '90ms' }}
         >
-          {hero.headlineFirst}
-          <span className="mt-1 block text-gold italic">{hero.headlineSecond}</span>
+          {hero.headline}
         </h1>
 
         <p
@@ -52,18 +55,22 @@ export function Hero() {
         >
           <Cta href={hero.primaryCta.href} variant="gold">
             {hero.primaryCta.label}
-            <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
+            <ArrowRight
+              className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"
+              aria-hidden="true"
+            />
           </Cta>
           <Cta href={hero.secondaryCta.href} variant="light">
             {hero.secondaryCta.label}
           </Cta>
         </div>
 
-        <div className="mt-16 max-w-2xl border-t border-ivory/20 pt-6 lg:mt-20">
-          <p className="text-[0.8rem] leading-relaxed tracking-[0.02em] text-ivory/60">
-            {hero.footline}
-          </p>
-        </div>
+        <p
+          className="rise mt-14 max-w-2xl border-t border-ivory/20 pt-6 text-[0.78rem] leading-relaxed tracking-[0.02em] text-ivory/60"
+          style={{ animationDelay: '340ms' }}
+        >
+          {hero.footline}
+        </p>
       </div>
     </section>
   )
