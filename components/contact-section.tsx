@@ -15,11 +15,7 @@ export function ContactSection({ accepting }: { accepting: boolean }) {
           <p className="body-copy mt-7 max-w-[46ch]">{contact.body}</p>
 
           <div className="mt-9 border-l-2 border-gold pl-5">
-            <p className="text-[0.8rem] leading-relaxed text-walnut/70">
-              The foundation is being formally established. Legal registration details, a published
-              correspondence address and official contact channels will appear on this website when
-              they are available.
-            </p>
+            <p className="text-[0.8rem] leading-relaxed text-walnut/70">{contact.note}</p>
           </div>
         </div>
 

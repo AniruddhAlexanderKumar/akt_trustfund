@@ -1,7 +1,7 @@
 export const enquirySubjects = [
   'General enquiry',
-  'The Medical Scholars Programme',
-  'Supporting the foundation',
+  'Contributing to the initiative',
+  'The public ledger',
   'Media and press',
   'Other',
 ] as const

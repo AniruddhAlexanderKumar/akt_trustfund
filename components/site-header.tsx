@@ -13,7 +13,7 @@ const sectionIds = navItems
   .map((item) => (item.href.includes('#') ? item.href.split('#')[1] : null))
   .filter((id): id is string => Boolean(id))
 
-const cta = { label: 'Explore Our Mission', href: '/#mission' }
+const cta = { label: 'See the Target', href: '/#campaign' }
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
@@ -90,7 +90,7 @@ export function SiteHeader() {
             }`}
           />
           <span className="min-w-0">
-            <span className="block max-w-[15rem] text-[0.68rem] font-bold leading-[1.35] uppercase tracking-[0.14em] sm:max-w-[20rem] xl:max-w-[11rem] xl:text-[0.7rem] 2xl:max-w-[26rem]">
+            <span className="block max-w-[15rem] text-[0.68rem] font-bold leading-[1.35] uppercase tracking-[0.14em] sm:max-w-[20rem] lg:max-w-[13rem] xl:max-w-[20rem] xl:text-[0.7rem] 2xl:max-w-[26rem]">
               {site.name}
             </span>
             <span className="mt-1 block text-[0.6rem] uppercase tracking-[0.26em] text-sage">
@@ -99,7 +99,7 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <nav aria-label="Primary" className="hidden items-center gap-5 xl:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-5 lg:flex xl:gap-7">
           {navItems.map((item) => {
             const active = isActive(item.href)
             return (
@@ -107,7 +107,7 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 aria-current={active ? 'page' : undefined}
-                className={`group relative whitespace-nowrap text-[0.62rem] font-bold uppercase tracking-[0.13em] transition-colors duration-200 hover:text-forest ${
+                className={`group relative whitespace-nowrap text-[0.64rem] font-bold uppercase tracking-[0.14em] transition-colors duration-200 hover:text-forest ${
                   active ? 'text-forest' : 'text-walnut/75'
                 }`}
               >
@@ -129,7 +129,7 @@ export function SiteHeader() {
           aria-expanded={open}
           aria-controls="mobile-navigation"
           aria-label={open ? 'Close menu' : 'Open menu'}
-          className="inline-flex h-11 w-11 items-center justify-center border border-forest/25 text-forest transition-colors duration-200 hover:border-forest xl:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center border border-forest/25 text-forest transition-colors duration-200 hover:border-forest lg:hidden"
         >
           {open ? <X className="h-5 w-5" aria-hidden="true" /> : <Menu className="h-5 w-5" aria-hidden="true" />}
         </button>
@@ -138,7 +138,7 @@ export function SiteHeader() {
       <div
         id="mobile-navigation"
         aria-hidden={!open}
-        className={`grid border-t border-forest/12 bg-ivory transition-all duration-300 ease-out xl:hidden ${
+        className={`grid border-t border-forest/12 bg-ivory transition-all duration-300 ease-out lg:hidden ${
           open ? 'visible grid-rows-[1fr] opacity-100' : 'invisible grid-rows-[0fr] opacity-0'
         }`}
       >

@@ -133,65 +133,6 @@
   .rise {
     animation: rise 900ms cubic-bezier(0.22, 0.72, 0.2, 1) both;
   }
-
-  /* Animated hairline that grows from the left on hover. */
-  .link-underline {
-    background-image: linear-gradient(currentColor, currentColor);
-    background-position: 0 100%;
-    background-repeat: no-repeat;
-    background-size: 0% 1px;
-    transition: background-size 320ms cubic-bezier(0.22, 0.72, 0.2, 1);
-  }
-
-  .link-underline:hover,
-  .link-underline:focus-visible {
-    background-size: 100% 1px;
-  }
-
-  /* Centred hairline with a small diamond at its midpoint. */
-  .ornament {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    color: var(--color-gold);
-  }
-
-  .ornament::before,
-  .ornament::after {
-    content: "";
-    height: 1px;
-    width: clamp(2rem, 7vw, 4.5rem);
-    background-color: currentColor;
-    opacity: 0.55;
-  }
-
-  .diamond {
-    display: block;
-    height: 6px;
-    width: 6px;
-    rotate: 45deg;
-    background-color: currentColor;
-  }
-
-  .card-lift {
-    transition:
-      transform 420ms cubic-bezier(0.22, 0.72, 0.2, 1),
-      border-color 320ms ease,
-      background-color 320ms ease;
-  }
-
-  .card-lift:hover {
-    transform: translate3d(0, -4px, 0);
-  }
-
-  .media-zoom img {
-    transition: transform 1100ms cubic-bezier(0.22, 0.72, 0.2, 1);
-  }
-
-  .media-zoom:hover img {
-    transform: scale(1.035);
-  }
 }
 
 /* Scroll-reveal ---------------------------------------------------------- */
@@ -227,52 +168,6 @@
 
   .js [data-reveal].is-visible {
     opacity: 1;
-    transform: none;
-  }
-}
-
-@keyframes hero-zoom {
-  from {
-    transform: scale(1.07);
-  }
-  to {
-    transform: scale(1);
-  }
-}
-
-.hero-media {
-  animation: hero-zoom 2600ms cubic-bezier(0.22, 0.72, 0.2, 1) both;
-}
-
-@keyframes scroll-cue {
-  0%,
-  100% {
-    transform: scaleY(0.22);
-    opacity: 0.3;
-  }
-  50% {
-    transform: scaleY(1);
-    opacity: 0.9;
-  }
-}
-
-.scroll-cue {
-  transform-origin: top;
-  animation: scroll-cue 2800ms ease-in-out infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-media {
-    animation: none;
-  }
-
-  .scroll-cue {
-    animation: none;
-    opacity: 0.6;
-  }
-
-  .card-lift:hover,
-  .media-zoom:hover img {
     transform: none;
   }
 }

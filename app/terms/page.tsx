@@ -4,7 +4,7 @@ import { site } from '@/lib/site'
 
 export const metadata: Metadata = {
   title: 'Terms of Use',
-  description: 'Terms governing the use of the Late Dr. Anil Kumar Thakur Foundation website.',
+  description: 'Terms governing the use of this website.',
   alternates: { canonical: '/terms' },
   robots: { index: false, follow: true },
 }
@@ -14,37 +14,52 @@ export default function TermsPage() {
     <LegalPage title="Terms of Use" updated="November 2026">
       <LegalSection heading="Purpose of this website">
         <p>
-          This website provides information about {site.name}, the life it commemorates and the
-          programmes the foundation intends to develop in Jamshedpur, Jharkhand.
+          This website provides information about one initiative being undertaken in memory of Late
+          Dr. Anil Kumar Thakur: raising ₹50,000 to support the education of one student in
+          Jamshedpur, Jharkhand.
         </p>
       </LegalSection>
 
-      <LegalSection heading="Status of the foundation">
+      <LegalSection heading="Status of the initiative">
         <p>
-          The foundation is an initiative being established. Nothing on this website constitutes an
-          offer of a scholarship, an award, employment, a donation facility or a contractual
-          commitment. Programme descriptions set out intentions and are subject to formal
-          establishment, approval and available funding.
+          The initiative is independently coordinated. It is not a registered trust, society,
+          company, NGO or tax-exempt fundraising organisation, and none of those statuses is claimed
+          anywhere on this website.
+        </p>
+        <p>
+          Nothing on this website constitutes an offer of a scholarship, an award, employment, a
+          donation facility, a tax deduction or a contractual commitment.
         </p>
       </LegalSection>
 
       <LegalSection heading="Accuracy of information">
         <p>
-          Content is published in good faith and is kept as accurate as possible. Programme details,
-          timelines and institutional information may change as the foundation is established, and
-          will be updated on this website.
+          Financial figures shown on this website are calculated from the verified entries in the
+          published ledger. No contribution, expenditure or outcome is shown in advance of
+          verification, and no figure is estimated or illustrated.
         </p>
         <p>
-          No claim is made that the foundation is registered, that any programme is operational, or
-          that any particular outcome has been achieved.
+          No claim is made that any particular payment has been made, or that any particular result
+          has been achieved, other than what the ledger records.
+        </p>
+      </LegalSection>
+
+      <LegalSection heading="Contributions and payments">
+        <p>
+          No payment is collected through this website, and no payment details, UPI identifier, QR
+          code or bank account number is published here. Financial arrangements are supervised by the
+          responsible adult family member coordinating the initiative.
+        </p>
+        <p>
+          No donation receipt is issued, and no tax deduction is promised or implied.
         </p>
       </LegalSection>
 
       <LegalSection heading="Intellectual property">
         <p>
-          Text on this website is the property of the foundation. Photographs remain the property of
-          their photographers and are used under the licences credited in the footer. Their reuse is
-          subject to those licences.
+          Text on this website belongs to the initiative. The photograph remains the property of its
+          photographer and is used under the licence credited in the footer; reuse is subject to that
+          licence.
         </p>
       </LegalSection>
 
@@ -57,7 +72,7 @@ export default function TermsPage() {
 
       <LegalSection heading="External links">
         <p>
-          Links to external websites are provided for attribution and reference. The foundation is
+          Links to external websites are provided for attribution and reference. The initiative is
           not responsible for their content or practices.
         </p>
       </LegalSection>
@@ -70,7 +85,10 @@ export default function TermsPage() {
       </LegalSection>
 
       <LegalSection heading="Changes">
-        <p>These terms may be revised as the foundation is established. The current version is always on this page.</p>
+        <p>
+          These terms may be revised as the initiative develops. The current version is always on
+          this page.
+        </p>
       </LegalSection>
     </LegalPage>
   )

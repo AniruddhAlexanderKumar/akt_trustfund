@@ -28,17 +28,17 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'The Late Dr. Anil Kumar Thakur Foundation | Jamshedpur',
+    default: "₹50,000 to Support One Student's Education | Jamshedpur",
     template: `%s | ${site.shortName}`,
   },
   description: site.description,
   keywords: [
-    'Anil Kumar Thakur Foundation',
-    'Dr Anil Kumar Thakur Foundation',
-    'medical scholarships in Jamshedpur',
-    'medical education scholarships Jharkhand',
-    'student scholarships Jamshedpur',
-    'educational support for aspiring doctors',
+    'Late Dr. Anil Kumar Thakur',
+    'Anil Kumar Thakur memorial initiative',
+    'education support Jamshedpur',
+    'student education sponsorship Jharkhand',
+    '₹50,000 education initiative',
+    'charitable initiative Jamshedpur',
   ],
   applicationName: site.name,
   authors: [{ name: site.name }],
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     url: '/',
     siteName: site.name,
-    title: 'The Late Dr. Anil Kumar Thakur Foundation | Jamshedpur',
+    title: "₹50,000 to Support One Student's Education",
     description: site.description,
     images: [
       {
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'The Late Dr. Anil Kumar Thakur Foundation | Jamshedpur',
+    title: "₹50,000 to Support One Student's Education",
     description: site.description,
     images: ['/images/hero-jamshedpur.jpg'],
   },
@@ -79,7 +79,8 @@ const organisationJsonLd = {
   description: site.description,
   slogan: site.tagline,
   areaServed: { '@type': 'Place', name: 'Jamshedpur, Jharkhand, India' },
-  foundingLocation: { '@type': 'Place', name: 'Jamshedpur, Jharkhand, India' },
+  disambiguatingDescription:
+    'An independently coordinated charitable initiative. Not a registered trust, society, NGO or tax-exempt organisation.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

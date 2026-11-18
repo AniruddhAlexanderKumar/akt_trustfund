@@ -1,39 +1,26 @@
 import { Hero } from '@/components/hero'
-import { LegacyStory } from '@/components/legacy-story'
-import { QuoteBand } from '@/components/quote-band'
-import { Philosophy } from '@/components/philosophy'
-import { MedicalScholars } from '@/components/medical-scholars'
-import { PilotCampaign } from '@/components/pilot-campaign'
-import { Roadmap } from '@/components/roadmap'
-import { Commitment } from '@/components/commitment'
-import { WaysToHelp } from '@/components/ways-to-help'
-import { Geography } from '@/components/geography'
+import { Memory } from '@/components/memory'
+import { Campaign } from '@/components/campaign'
+import { UseOfFunds } from '@/components/use-of-funds'
 import { Transparency } from '@/components/transparency'
-import { Faq } from '@/components/faq'
+import { Beneficiary } from '@/components/beneficiary'
+import { Status } from '@/components/status'
 import { ContactSection } from '@/components/contact-section'
-import { Closing } from '@/components/closing'
-import { JsonLd } from '@/components/json-ld'
+import { FinalCta } from '@/components/final-cta'
 import { isContactConfigured } from '@/lib/contact'
-import { faqJsonLd } from '@/lib/structured-data'
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <LegacyStory />
-      <QuoteBand />
-      <Philosophy />
-      <MedicalScholars />
-      <PilotCampaign />
-      <Roadmap />
-      <Commitment />
-      <WaysToHelp />
-      <Geography />
+      <Memory />
+      <Campaign />
+      <UseOfFunds />
       <Transparency />
-      <Faq />
+      <Beneficiary />
+      <Status />
       <ContactSection accepting={isContactConfigured()} />
-      <Closing />
-      <JsonLd data={faqJsonLd()} />
+      <FinalCta />
     </>
   )
 }

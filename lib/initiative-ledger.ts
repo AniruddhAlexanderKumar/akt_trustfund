@@ -1,33 +1,32 @@
-import rawLedger from '@/data/pilot-001/ledger.json'
+import rawLedger from '@/data/first-initiative/ledger.json'
+import { initiative } from '@/lib/initiative'
 
-export type PilotEntryKind = 'contribution' | 'expenditure'
+export type LedgerEntryKind = 'contribution' | 'expenditure'
 
-export type PilotEvidence = { label: string; href: string }
+export type LedgerEvidence = { label: string; href: string }
 
-export type PilotLedgerEntry = {
+export type LedgerEntry = {
   reference: string
   date: string
   verifiedOn: string
-  kind: PilotEntryKind
+  kind: LedgerEntryKind
   label: string
   amount: number
   note?: string
-  evidence?: PilotEvidence
+  evidence?: LedgerEvidence
   balance: number
 }
 
-export type PilotAward = {
-  paymentDate: string
-  amountUsed: number
-  expenseSupported: string
-  account: string
-  evidence: PilotEvidence[]
+export type LedgerTotals = {
+  contributed: number
+  spent: number
+  balance: number
+  remainingTarget: number
 }
 
-export type PilotLedger = {
-  entries: PilotLedgerEntry[]
-  totals: { contributed: number; spent: number; balance: number }
-  award: PilotAward | null
+export type Ledger = {
+  entries: LedgerEntry[]
+  totals: LedgerTotals
 }
 
 const DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/
@@ -36,7 +35,7 @@ const REFERENCE_PATTERN = /^[A-Z]{2,5}-\d{2,4}$/
 function warn(message: string) {
   // Server-side only: helps the administrator notice a malformed entry without
   // ever printing financial or personal detail.
-  console.warn(`[pilot-001 ledger] ${message}`)
+  console.warn(`[ledger] ${message}`)
 }
 
 function isValidDate(value: unknown): value is string {
@@ -59,7 +58,7 @@ function isPublicText(value: unknown, maxLength: number): value is string {
   return true
 }
 
-function parseEvidence(value: unknown): PilotEvidence | undefined {
+function parseEvidence(value: unknown): LedgerEvidence | undefined {
   if (value === undefined || value === null) return undefined
   if (typeof value !== 'object') return undefined
 
@@ -74,7 +73,7 @@ function parseEvidence(value: unknown): PilotEvidence | undefined {
   return { label, href }
 }
 
-function parseEntry(value: unknown, index: number): PilotLedgerEntry | null {
+function parseEntry(value: unknown, index: number): LedgerEntry | null {
   if (typeof value !== 'object' || value === null) {
     warn(`entry ${index + 1} is not an object and was omitted`)
     return null
@@ -136,50 +135,8 @@ function parseEntry(value: unknown, index: number): PilotLedgerEntry | null {
   }
 }
 
-function parseAward(value: unknown): PilotAward | null {
-  if (!value || typeof value !== 'object') return null
-
-  const award = value as Record<string, unknown>
-
-  if (!isValidDate(award.paymentDate)) {
-    warn('award has an invalid payment date and was omitted')
-    return null
-  }
-
-  if (
-    typeof award.amountUsed !== 'number' ||
-    !Number.isInteger(award.amountUsed) ||
-    award.amountUsed < 0
-  ) {
-    warn('award has an invalid amount and was omitted')
-    return null
-  }
-
-  if (!isPublicText(award.expenseSupported, 160) || !isPublicText(award.account, 1200)) {
-    warn('award text may contain personal data and was omitted')
-    return null
-  }
-
-  const evidence: PilotEvidence[] = []
-  if (Array.isArray(award.evidence)) {
-    for (const item of award.evidence) {
-      const parsed = parseEvidence(item)
-      if (parsed) evidence.push(parsed)
-    }
-  }
-
-  return {
-    paymentDate: award.paymentDate,
-    amountUsed: award.amountUsed,
-    expenseSupported: award.expenseSupported,
-    account: award.account,
-    evidence,
-  }
-}
-
-function buildLedger(raw: unknown): PilotLedger {
-  const entries: PilotLedgerEntry[] = []
-  let award: PilotAward | null = null
+function buildLedger(raw: unknown): Ledger {
+  const entries: LedgerEntry[] = []
 
   if (raw && typeof raw === 'object') {
     const data = raw as Record<string, unknown>
@@ -190,8 +147,6 @@ function buildLedger(raw: unknown): PilotLedger {
         if (parsed) entries.push(parsed)
       })
     }
-
-    award = parseAward(data.award)
   }
 
   entries.sort((a, b) => {
@@ -203,21 +158,21 @@ function buildLedger(raw: unknown): PilotLedger {
   let spent = 0
 
   for (const entry of entries) {
-    if (entry.kind === 'contribution') {
-      contributed += entry.amount
-      entry.balance = contributed - spent
-    } else {
-      spent += entry.amount
-      entry.balance = contributed - spent
-    }
+    if (entry.kind === 'contribution') contributed += entry.amount
+    else spent += entry.amount
+    entry.balance = contributed - spent
   }
 
   return {
     entries,
-    totals: { contributed, spent, balance: contributed - spent },
-    award,
+    totals: {
+      contributed,
+      spent,
+      balance: contributed - spent,
+      remainingTarget: Math.max(0, initiative.targetAmount - contributed),
+    },
   }
 }
 
 /** Verified, anonymised ledger data. Everything shown publicly comes from here. */
-export const pilotLedger: PilotLedger = buildLedger(rawLedger as unknown)
+export const ledger: Ledger = buildLedger(rawLedger as unknown)

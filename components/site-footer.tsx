@@ -4,16 +4,13 @@ import { AnchorLink } from '@/components/anchor-link'
 import { Emblem } from '@/components/emblem'
 import { navItems, photographyCredits, site } from '@/lib/site'
 
-const footerLinks = [
-  ...navItems,
-  { label: 'Get Involved', href: '/#help' },
-  { label: 'Questions', href: '/#faq' },
-]
-
 export function SiteFooter() {
   return (
     <footer className="relative bg-charcoal text-ivory/70">
-      <div aria-hidden="true" className="h-px w-full bg-gradient-to-r from-transparent via-gold/35 to-transparent" />
+      <div
+        aria-hidden="true"
+        className="h-px w-full bg-gradient-to-r from-transparent via-gold/35 to-transparent"
+      />
       <div className="shell py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-5">
@@ -29,10 +26,10 @@ export function SiteFooter() {
             <p className="mt-4 text-sm leading-relaxed">{site.locationFull}</p>
           </div>
 
-          <nav aria-label="Footer" className="lg:col-span-3">
+          <nav aria-label="Footer" className="lg:col-span-4">
             <h2 className="eyebrow text-ivory/45">Navigation</h2>
             <ul className="mt-5 space-y-2.5">
-              {footerLinks.map((item) => (
+              {navItems.map((item) => (
                 <li key={item.href}>
                   <AnchorLink
                     href={item.href}
@@ -45,7 +42,7 @@ export function SiteFooter() {
             </ul>
           </nav>
 
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-3">
             <h2 className="eyebrow text-ivory/45">Legal</h2>
             <ul className="mt-5 space-y-2.5">
               <li>
@@ -65,10 +62,6 @@ export function SiteFooter() {
                 </Link>
               </li>
             </ul>
-            <p className="mt-6 text-[0.7rem] leading-relaxed text-ivory/45">
-              Official social media accounts are not yet published. They will appear here once they
-              exist.
-            </p>
           </div>
         </div>
 
@@ -79,7 +72,7 @@ export function SiteFooter() {
 
           <details className="group max-w-4xl">
             <summary className="cursor-pointer list-none text-[0.7rem] font-bold uppercase tracking-[0.18em] text-ivory/50 transition-colors duration-200 hover:text-gold">
-              Photography credits
+              Photography credit
             </summary>
             <ul className="mt-4 space-y-1.5 text-[0.72rem] leading-relaxed text-ivory/45">
               {photographyCredits.map((credit) => (

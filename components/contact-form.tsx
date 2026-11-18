@@ -214,7 +214,7 @@ export function ContactForm({ accepting }: { accepting: boolean }) {
             aria-describedby={errors.consent ? 'consent-error' : undefined}
             className="mt-1 h-4 w-4 shrink-0 rounded-none border border-forest/40 accent-forest"
           />
-          I agree that the foundation may use the details above to respond to this enquiry.
+          I agree that the details above may be used to respond to this enquiry.
         </label>
         {errors.consent ? (
           <p id="consent-error" role="alert" className={errorClass}>
@@ -227,7 +227,7 @@ export function ContactForm({ accepting }: { accepting: boolean }) {
       <div className="flex flex-col gap-4 border-t border-forest/12 pt-6 sm:flex-row sm:items-center sm:justify-between">
         <p className="max-w-md text-[0.75rem] leading-relaxed text-walnut/55">
           {accepting
-            ? 'Your enquiry is sent by email to the foundation and is not stored on this website.'
+            ? 'Your enquiry is sent by email and is not stored on this website.'
             : 'Submissions are disabled until an official enquiries inbox is configured.'}
         </p>
         <button

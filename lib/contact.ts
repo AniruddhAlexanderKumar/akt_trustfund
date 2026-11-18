@@ -62,7 +62,7 @@ export function validateEnquiry(payload: unknown): ValidationResult {
     errors.message = 'Please keep your message under 2000 characters.'
   }
   if (data.consent !== true) {
-    errors.consent = 'Please confirm that the foundation may contact you about this enquiry.'
+    errors.consent = 'Please confirm that you may be contacted about this enquiry.'
   }
 
   const elapsed = Date.now() - startedAt

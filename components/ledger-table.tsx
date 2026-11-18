@@ -1,31 +1,58 @@
 import { FileText } from 'lucide-react'
-import { formatINR, formatLedgerDate } from '@/lib/pilot'
-import { pilotLedger } from '@/lib/pilot-ledger'
+import { formatINR, formatLedgerDate, initiative } from '@/lib/initiative'
+import { ledger } from '@/lib/initiative-ledger'
 
-export function PilotFinancialSummary({ className = '' }: { className?: string }) {
-  const { totals } = pilotLedger
-
+export function FinancialSummaryTable() {
   const rows = [
-    { label: 'Total received', value: totals.contributed },
-    { label: 'Total spent', value: totals.spent },
-    { label: 'Remaining balance', value: totals.balance },
+    { label: 'Fundraising target', value: initiative.targetAmount },
+    { label: 'Contributions received', value: ledger.totals.contributed },
+    { label: 'Educational expenditure', value: ledger.totals.spent },
+    { label: 'Remaining target', value: ledger.totals.remainingTarget },
   ]
 
   return (
-    <dl
-      className={`grid gap-px overflow-hidden border border-forest/15 bg-forest/15 sm:grid-cols-3 ${className}`}
-    >
-      {rows.map((row) => (
-        <div key={row.label} className="bg-ivory px-5 py-5 sm:px-6">
-          <dt className="text-[0.56rem] font-bold uppercase tracking-[0.2em] text-sage">
-            {row.label}
-          </dt>
-          <dd className="mt-2 font-serif text-[1.5rem] leading-none text-forest tabular-nums">
-            {formatINR(row.value)}
-          </dd>
-        </div>
-      ))}
-    </dl>
+    <div className="border border-forest/15 bg-white">
+      <table className="w-full border-collapse text-left">
+        <caption className="sr-only">
+          Financial category and amount: target, contributions received, educational expenditure and
+          remaining target.
+        </caption>
+        <thead>
+          <tr className="border-b border-forest/20 bg-ivory/70">
+            <th
+              scope="col"
+              className="px-5 py-3.5 text-left text-[0.56rem] font-bold uppercase tracking-[0.2em] text-sage sm:px-6"
+            >
+              Financial category
+            </th>
+            <th
+              scope="col"
+              className="px-5 py-3.5 text-right text-[0.56rem] font-bold uppercase tracking-[0.2em] text-sage sm:px-6"
+            >
+              Amount
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row, index) => (
+            <tr
+              key={row.label}
+              className={index < rows.length - 1 ? 'border-b border-forest/10' : ''}
+            >
+              <th
+                scope="row"
+                className="px-5 py-4 text-left text-[0.9rem] font-normal text-walnut/85 sm:px-6"
+              >
+                {row.label}
+              </th>
+              <td className="px-5 py-4 text-right text-[0.95rem] text-forest tabular-nums sm:px-6">
+                {formatINR(row.value)}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   )
 }
 
@@ -34,29 +61,23 @@ const headCell =
 const bodyCell = 'px-4 py-5 text-[0.88rem] leading-relaxed text-walnut/85 first:pl-6 last:pr-6'
 const amountCell = 'px-4 py-5 text-right text-[0.9rem] text-forest tabular-nums last:pr-6'
 
-export function PilotLedgerTable() {
-  const { entries, totals } = pilotLedger
+export function LedgerTable() {
+  const { entries, totals } = ledger
   const hasEntries = entries.length > 0
 
   return (
     <div className="border border-forest/15 bg-white">
-      <div
-        className="overflow-x-auto"
-        role="region"
-        aria-label="Pilot 001 public ledger"
-        tabIndex={0}
-      >
+      <div className="overflow-x-auto" role="region" aria-label="Transaction ledger" tabIndex={0}>
         <table className="w-full min-w-[44rem] border-collapse text-left">
           <caption className="sr-only">
-            Verified contributions to and expenditure from Pilot 001, in date order, with a running
-            balance.
+            Verified contributions and actual expenditure, in date order, with a running balance.
           </caption>
           <thead>
             <tr className="border-b border-forest/20 bg-ivory/70">
               <th scope="col" className={`${headCell} w-[8.5rem]`}>
                 Date
               </th>
-              <th scope="col" className={`${headCell}`}>
+              <th scope="col" className={headCell}>
                 Reference
               </th>
               <th scope="col" className={`${headCell} w-[8.5rem] text-right`}>
@@ -113,8 +134,8 @@ export function PilotLedgerTable() {
               ))
             ) : (
               <tr>
-                <td colSpan={5} className="px-6 py-14 text-center">
-                  <p className="font-serif text-[1.2rem] leading-snug text-forest">
+                <td colSpan={5} className="px-6 py-12 text-center">
+                  <p className="font-serif text-[1.15rem] leading-snug text-forest">
                     No verified transactions have been recorded yet.
                   </p>
                   <p className="mx-auto mt-3 max-w-md text-[0.82rem] leading-relaxed text-walnut/60">

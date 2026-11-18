@@ -83,7 +83,7 @@ export async function POST(request: Request) {
     '',
     enquiry.message,
     '',
-    'Submitted through the foundation website enquiry form.',
+    'Submitted through the website enquiry form.',
   ]
     .filter((line) => line !== null)
     .join('\n')
@@ -126,7 +126,7 @@ export async function POST(request: Request) {
   }
 
   return NextResponse.json(
-    { ok: true, message: 'Thank you. Your enquiry has been sent to the foundation.' },
+    { ok: true, message: 'Thank you. Your enquiry has been sent.' },
     { status: 201 },
   )
 }

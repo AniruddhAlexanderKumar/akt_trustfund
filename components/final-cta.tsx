@@ -1,0 +1,43 @@
+import { ArrowRight } from 'lucide-react'
+import { Cta } from '@/components/cta'
+import { initiative } from '@/lib/initiative'
+
+export function FinalCta() {
+  const { finalCta } = initiative
+
+  return (
+    <section aria-labelledby="cta-heading" className="relative overflow-hidden bg-forest text-ivory">
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(217,196,155,0.14),transparent_65%)]"
+      />
+      <div className="shell relative py-20 text-center lg:py-28" data-reveal>
+        <span aria-hidden="true" className="mx-auto block h-px w-16 bg-gold/60" />
+        <h2
+          id="cta-heading"
+          className="mx-auto mt-9 max-w-[22ch] font-serif text-[clamp(1.5rem,3.2vw,2.5rem)] leading-[1.25] tracking-[0.05em] text-ivory uppercase"
+        >
+          {finalCta.heading}
+        </h2>
+        <p className="lede mx-auto mt-7 max-w-xl text-ivory/70">{finalCta.body}</p>
+
+        <div className="mt-11 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+          <Cta href={finalCta.primary.href} variant="gold">
+            {finalCta.primary.label}
+            <ArrowRight
+              className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"
+              aria-hidden="true"
+            />
+          </Cta>
+          <Cta href={finalCta.secondary.href} variant="light">
+            {finalCta.secondary.label}
+          </Cta>
+        </div>
+
+        <p className="mt-10 text-[0.72rem] leading-relaxed text-ivory/45">
+          No payment is collected through this website.
+        </p>
+      </div>
+    </section>
+  )
+}
