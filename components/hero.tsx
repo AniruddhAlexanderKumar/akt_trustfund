@@ -16,7 +16,7 @@ export function Hero() {
         fill
         priority
         sizes="100vw"
-        className="object-cover object-center"
+        className="hero-media object-cover object-center"
       />
       <div
         aria-hidden="true"
@@ -25,6 +25,10 @@ export function Hero() {
       <div
         aria-hidden="true"
         className="absolute inset-0 bg-gradient-to-t from-forest via-forest/25 to-forest/45"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-gold/35 to-transparent"
       />
 
       <div className="shell relative w-full pb-14 pt-40 lg:pb-20 lg:pt-48">
@@ -59,10 +63,20 @@ export function Hero() {
           </Cta>
         </div>
 
-        <div className="mt-16 max-w-2xl border-t border-ivory/20 pt-6 lg:mt-20">
-          <p className="text-[0.8rem] leading-relaxed tracking-[0.02em] text-ivory/60">
+        <div
+          className="rise mt-16 flex items-end justify-between gap-10 border-t border-ivory/20 pt-6 lg:mt-20"
+          style={{ animationDelay: '340ms' }}
+        >
+          <p className="max-w-2xl text-[0.8rem] leading-relaxed tracking-[0.02em] text-ivory/60">
             {hero.footline}
           </p>
+          <span
+            aria-hidden="true"
+            className="hidden shrink-0 flex-col items-center gap-3 text-[0.56rem] font-bold uppercase tracking-[0.32em] text-ivory/40 sm:flex"
+          >
+            Scroll
+            <span className="scroll-cue block h-12 w-px bg-gradient-to-b from-gold/80 to-gold/10" />
+          </span>
         </div>
       </div>
     </section>

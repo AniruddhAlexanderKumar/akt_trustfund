@@ -4,6 +4,8 @@ import './globals.css'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { HashScroll } from '@/components/hash-scroll'
+import { RevealObserver } from '@/components/reveal-observer'
+import { BackToTop } from '@/components/back-to-top'
 import { site } from '@/lib/site'
 
 const cormorant = Cormorant_Garamond({
@@ -83,7 +85,17 @@ const organisationJsonLd = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-IN" className={`${cormorant.variable} ${lato.variable}`}>
-      <body>
+      <body id="top">
+        <script
+          // Runs before the rest of the document is parsed, so scroll-reveal
+          // sections never flash in and out. It is skipped for reduced motion
+          // and for browsers without IntersectionObserver, where the CSS that
+          // hides those sections is never enabled.
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){try{if(!('IntersectionObserver' in window))return;if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;document.documentElement.classList.add('js');setTimeout(function(){if(window.__revealReady)return;var n=document.querySelectorAll('[data-reveal]:not(.is-visible)');for(var i=0;i<n.length;i++)n[i].classList.add('is-visible')},4000)}catch(e){}})()",
+          }}
+        />
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-forest focus:px-5 focus:py-3 focus:text-xs focus:font-bold focus:uppercase focus:tracking-[0.18em] focus:text-ivory"
@@ -93,7 +105,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SiteHeader />
         <main id="main">{children}</main>
         <SiteFooter />
+        <BackToTop />
         <HashScroll />
+        <RevealObserver />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organisationJsonLd) }}

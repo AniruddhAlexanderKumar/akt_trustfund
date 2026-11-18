@@ -7,9 +7,9 @@ export function Geography() {
   return (
     <section aria-labelledby="geography-heading" className="section bg-ivory">
       <div className="shell grid items-center gap-14 lg:grid-cols-12 lg:gap-16">
-        <div className="lg:col-span-5">
+        <div className="lg:col-span-5" data-reveal>
           <figure>
-            <div className="relative aspect-[4/3] w-full overflow-hidden bg-forest/10">
+            <div className="media-zoom relative aspect-[4/3] w-full overflow-hidden bg-forest/10">
               <Image
                 src={geography.image}
                 alt={geography.imageAlt}
@@ -26,7 +26,7 @@ export function Geography() {
           </figure>
         </div>
 
-        <div className="lg:col-span-6 lg:col-start-7">
+        <div className="lg:col-span-6 lg:col-start-7" data-reveal data-reveal-delay="1">
           <Eyebrow>Our place</Eyebrow>
           <h2 id="geography-heading" className="display-2 mt-6 text-forest">
             {geography.heading}

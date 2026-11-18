@@ -52,6 +52,11 @@ export const story = {
   cta: { label: 'Read His Story', href: '/his-legacy' },
 }
 
+export const foundingQuote = {
+  text: 'He believed that helping others was an essential responsibility.',
+  attribution: "From the foundation's founding statement",
+} as const
+
 export const pillars = [
   {
     index: 'I',
@@ -151,6 +156,128 @@ export const initiatives = [
 
 export const initiativesNote =
   'These are the areas in which the foundation intends to work. No programme is yet operational, and nothing on this page should be read as a claim of completed charitable activity.'
+
+export const roadmap = {
+  eyebrow: 'Progress',
+  heading: 'Where the foundation stands.',
+  intro:
+    'The foundation is being established carefully and in the open. Each stage below is published here as it is reached, with the next step stated plainly.',
+  note: 'No dates are published until they are confirmed. A stage marked as planned is an intention, not a promise.',
+  steps: [
+    {
+      status: 'done',
+      label: 'Published',
+      title: 'Founding statement',
+      body: 'The family publishes the founding statement, the life it commemorates and the values the foundation will carry forward.',
+    },
+    {
+      status: 'active',
+      label: 'In progress',
+      title: 'Formal establishment',
+      body: 'Registration of the trust, adoption of a governing document and the naming of trustees who will be accountable for it.',
+    },
+    {
+      status: 'next',
+      label: 'Planned',
+      title: 'Governance and policies',
+      body: 'Publication of the legal structure, governance arrangements, financial controls and the scholarship selection policy.',
+    },
+    {
+      status: 'next',
+      label: 'Planned',
+      title: 'Programme design',
+      body: 'Eligibility criteria, the application process and the review procedure, published before any student is invited to apply.',
+    },
+    {
+      status: 'next',
+      label: 'Planned',
+      title: 'The first scholars',
+      body: 'The first Medical Scholars cohort is announced, with support released against published criteria and available funding.',
+    },
+  ],
+} as const
+
+export const waysToHelp = {
+  eyebrow: 'Get involved',
+  heading: 'There is a part for you in this.',
+  intro:
+    'The foundation cannot yet accept funds, but the people who will make the programme work can begin to be found now.',
+  note: 'Nothing here is a claim that a programme is running. Enquiries are welcome through the contact form.',
+  items: [
+    {
+      icon: 'mentor',
+      title: 'Mentor a student',
+      body: 'Doctors, medical students and science teachers willing to offer steady guidance once scholars are enrolled.',
+      status: 'Enquiries welcome',
+      open: true,
+    },
+    {
+      icon: 'give',
+      title: 'Contribute',
+      body: 'Financial support will open once the trust is registered and a transparent receipting process is in place.',
+      status: 'Not yet open',
+      open: false,
+    },
+    {
+      icon: 'partner',
+      title: 'Partner with us',
+      body: 'Schools, colleges and clinics in Jamshedpur that share this purpose and know the students it would serve.',
+      status: 'Enquiries welcome',
+      open: true,
+    },
+    {
+      icon: 'share',
+      title: 'Spread the word',
+      body: 'Tell a teacher, a neighbour or a student who might one day be the reason this foundation exists.',
+      status: 'Open now',
+      open: true,
+    },
+  ],
+} as const
+
+export const faq = {
+  eyebrow: 'Questions',
+  heading: 'Answers, before you write.',
+  intro:
+    'Plain answers about the foundation as it stands today. Anything not answered here can be asked through the contact form.',
+  items: [
+    {
+      question: 'Is the foundation registered?',
+      answer:
+        'Not yet. The trust is being formally established. Registration details, the legal structure and the trustees will be published on this website once they exist. Nothing is stated here in advance of that.',
+    },
+    {
+      question: 'Can a student apply for support now?',
+      answer:
+        'No. Applications have not opened and no student is currently receiving support. Eligibility criteria, the application process and the review procedure will be published on this website before anyone is invited to apply.',
+    },
+    {
+      question: 'Who is the programme intended to support?',
+      answer:
+        'Students from Grade 7 onwards in Jamshedpur and the surrounding areas of Jharkhand who hope to study medicine. The programme is open to all genders. Financial need is a major selection consideration, and academic potential and commitment also count.',
+    },
+    {
+      question: 'How will scholars be chosen?',
+      answer:
+        'Selection will combine financial need with academic potential and demonstrated commitment, and continued support will depend on periodic eligibility reviews. The full policy, including how review decisions are made, will be published before applications open. No quotas have been set or announced.',
+    },
+    {
+      question: 'How much will a scholarship be worth?',
+      answer:
+        'No amounts are published, because they have not been established. The intention is to help with school costs, books and learning resources, and examination or admission fees, subject to available funding in any given year.',
+    },
+    {
+      question: 'How can I contribute or help?',
+      answer:
+        'Please use the contact form. Contributions cannot be accepted until the trust is registered and a receipting process exists, but offers of mentorship, partnerships and other support are welcome now and will be recorded for when the programme opens.',
+    },
+    {
+      question: 'How do I get in touch?',
+      answer:
+        'Through the enquiry form on this website, which is the only channel currently published. A postal address and telephone number will appear once they are formally available and confirmed by the family.',
+    },
+  ],
+} as const
 
 export const geography = {
   heading: 'Rooted in Jamshedpur.',

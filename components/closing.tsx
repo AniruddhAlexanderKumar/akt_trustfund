@@ -8,7 +8,7 @@ export function Closing() {
         aria-hidden="true"
         className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(217,196,155,0.14),transparent_65%)]"
       />
-      <div className="shell relative py-24 text-center lg:py-32">
+      <div className="shell relative py-24 text-center lg:py-32" data-reveal>
         <span aria-hidden="true" className="mx-auto block h-px w-16 bg-gold/60" />
         <h2
           id="closing-heading"

@@ -9,7 +9,7 @@ export function MedicalScholars() {
     <section id="scholars" aria-labelledby="scholars-heading" className="section bg-ivory">
       <div className="shell">
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7" data-reveal>
             <Eyebrow>{programme.eyebrow}</Eyebrow>
             <p className="mt-5 text-[0.7rem] font-bold uppercase tracking-[0.24em] text-walnut/70">
               {programme.name}
@@ -37,8 +37,8 @@ export function MedicalScholars() {
             </div>
           </div>
 
-          <div className="lg:col-span-5">
-            <div className="relative aspect-[4/5] w-full overflow-hidden bg-forest/10">
+          <div className="lg:col-span-5" data-reveal data-reveal-delay="1">
+            <div className="media-zoom relative aspect-[4/5] w-full overflow-hidden bg-forest/10">
               <Image
                 src={programme.image}
                 alt={programme.imageAlt}
@@ -55,7 +55,7 @@ export function MedicalScholars() {
           </div>
         </div>
 
-        <div className="mt-20">
+        <div className="mt-20" data-reveal>
           <Eyebrow>Educational journey</Eyebrow>
           <div className="mt-7 flex items-center gap-5">
             <span className="eyebrow text-sage">{programme.journeyStart}</span>
@@ -85,7 +85,10 @@ export function MedicalScholars() {
           </ol>
         </div>
 
-        <div className="mt-20 grid gap-12 border-t border-forest/15 pt-14 lg:grid-cols-12 lg:gap-16">
+        <div
+          data-reveal
+          className="mt-20 grid gap-12 border-t border-forest/15 pt-14 lg:grid-cols-12 lg:gap-16"
+        >
           <div className="lg:col-span-4">
             <Eyebrow>Programme principles</Eyebrow>
             <h3 className="heading-3 mt-6 text-forest">

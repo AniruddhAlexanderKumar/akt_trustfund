@@ -7,7 +7,7 @@ export function LegacyStory() {
   return (
     <section id="his-legacy" aria-labelledby="legacy-heading" className="section bg-ivory">
       <div className="shell grid gap-14 lg:grid-cols-12 lg:gap-16">
-        <div className="lg:col-span-7">
+        <div className="lg:col-span-7" data-reveal>
           <Eyebrow>{story.eyebrow}</Eyebrow>
           <h2 id="legacy-heading" className="display-2 mt-6 max-w-[20ch] text-forest">
             {story.heading}
@@ -28,7 +28,7 @@ export function LegacyStory() {
           </div>
         </div>
 
-        <div className="lg:col-span-5 lg:pl-6">
+        <div className="lg:col-span-5 lg:pl-6" data-reveal data-reveal-delay="1">
           <PortraitPlaceholder caption={story.portraitCaption} note={story.portraitPlaceholder} />
         </div>
       </div>

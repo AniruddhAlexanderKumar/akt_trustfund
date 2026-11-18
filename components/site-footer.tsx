@@ -1,11 +1,19 @@
 import Link from 'next/link'
+import { ArrowUp } from 'lucide-react'
 import { AnchorLink } from '@/components/anchor-link'
 import { Emblem } from '@/components/emblem'
 import { navItems, photographyCredits, site } from '@/lib/site'
 
+const footerLinks = [
+  ...navItems,
+  { label: 'Get Involved', href: '/#help' },
+  { label: 'Questions', href: '/#faq' },
+]
+
 export function SiteFooter() {
   return (
-    <footer className="bg-charcoal text-ivory/70">
+    <footer className="relative bg-charcoal text-ivory/70">
+      <div aria-hidden="true" className="h-px w-full bg-gradient-to-r from-transparent via-gold/35 to-transparent" />
       <div className="shell py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-5">
@@ -24,7 +32,7 @@ export function SiteFooter() {
           <nav aria-label="Footer" className="lg:col-span-3">
             <h2 className="eyebrow text-ivory/45">Navigation</h2>
             <ul className="mt-5 space-y-2.5">
-              {navItems.map((item) => (
+              {footerLinks.map((item) => (
                 <li key={item.href}>
                   <AnchorLink
                     href={item.href}
@@ -92,9 +100,21 @@ export function SiteFooter() {
             </ul>
           </details>
 
-          <p className="text-[0.7rem] uppercase tracking-[0.18em] text-ivory/35">
-            © {new Date().getFullYear()} {site.name}. All rights reserved.
-          </p>
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <p className="text-[0.7rem] uppercase tracking-[0.18em] text-ivory/35">
+              © {new Date().getFullYear()} {site.name}. All rights reserved.
+            </p>
+            <a
+              href="#top"
+              className="group inline-flex items-center gap-2 text-[0.66rem] font-bold uppercase tracking-[0.18em] text-ivory/45 transition-colors duration-200 hover:text-gold"
+            >
+              Back to top
+              <ArrowUp
+                className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5"
+                aria-hidden="true"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </footer>

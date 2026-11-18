@@ -5,7 +5,7 @@
   --color-gold: #d9c49b;
   --color-ivory: #f5f0e5;
   --color-walnut: #493b32;
-  --color-sage: #78877a;
+  --color-sage: #5f6f60;
   --color-charcoal: #242923;
 
   --font-sans: var(--font-lato), ui-sans-serif, system-ui, sans-serif;
@@ -132,6 +132,148 @@
 
   .rise {
     animation: rise 900ms cubic-bezier(0.22, 0.72, 0.2, 1) both;
+  }
+
+  /* Animated hairline that grows from the left on hover. */
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    transition: background-size 320ms cubic-bezier(0.22, 0.72, 0.2, 1);
+  }
+
+  .link-underline:hover,
+  .link-underline:focus-visible {
+    background-size: 100% 1px;
+  }
+
+  /* Centred hairline with a small diamond at its midpoint. */
+  .ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--color-gold);
+  }
+
+  .ornament::before,
+  .ornament::after {
+    content: "";
+    height: 1px;
+    width: clamp(2rem, 7vw, 4.5rem);
+    background-color: currentColor;
+    opacity: 0.55;
+  }
+
+  .diamond {
+    display: block;
+    height: 6px;
+    width: 6px;
+    rotate: 45deg;
+    background-color: currentColor;
+  }
+
+  .card-lift {
+    transition:
+      transform 420ms cubic-bezier(0.22, 0.72, 0.2, 1),
+      border-color 320ms ease,
+      background-color 320ms ease;
+  }
+
+  .card-lift:hover {
+    transform: translate3d(0, -4px, 0);
+  }
+
+  .media-zoom img {
+    transition: transform 1100ms cubic-bezier(0.22, 0.72, 0.2, 1);
+  }
+
+  .media-zoom:hover img {
+    transform: scale(1.035);
+  }
+}
+
+/* Scroll-reveal ---------------------------------------------------------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal] {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+    transition:
+      opacity 950ms cubic-bezier(0.22, 0.72, 0.2, 1),
+      transform 950ms cubic-bezier(0.22, 0.72, 0.2, 1);
+  }
+
+  .js [data-reveal="fade"] {
+    transform: none;
+  }
+
+  .js [data-reveal][data-reveal-delay="1"] {
+    transition-delay: 90ms;
+  }
+
+  .js [data-reveal][data-reveal-delay="2"] {
+    transition-delay: 180ms;
+  }
+
+  .js [data-reveal][data-reveal-delay="3"] {
+    transition-delay: 270ms;
+  }
+
+  .js [data-reveal][data-reveal-delay="4"] {
+    transition-delay: 360ms;
+  }
+
+  .js [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes hero-zoom {
+  from {
+    transform: scale(1.07);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.hero-media {
+  animation: hero-zoom 2600ms cubic-bezier(0.22, 0.72, 0.2, 1) both;
+}
+
+@keyframes scroll-cue {
+  0%,
+  100% {
+    transform: scaleY(0.22);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 0.9;
+  }
+}
+
+.scroll-cue {
+  transform-origin: top;
+  animation: scroll-cue 2800ms ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-media {
+    animation: none;
+  }
+
+  .scroll-cue {
+    animation: none;
+    opacity: 0.6;
+  }
+
+  .card-lift:hover,
+  .media-zoom:hover img {
+    transform: none;
   }
 }
 

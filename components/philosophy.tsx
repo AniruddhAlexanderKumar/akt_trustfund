@@ -8,16 +8,23 @@ export function Philosophy() {
   return (
     <section id="mission" aria-labelledby="mission-heading" className="section bg-forest text-ivory">
       <div className="shell">
-        <Eyebrow tone="light">Our philosophy</Eyebrow>
-        <h2 id="mission-heading" className="display-2 mt-6 max-w-[24ch] text-ivory">
-          Three principles. One enduring commitment.
-        </h2>
+        <div data-reveal>
+          <Eyebrow tone="light">Our philosophy</Eyebrow>
+          <h2 id="mission-heading" className="display-2 mt-6 max-w-[24ch] text-ivory">
+            Three principles. One enduring commitment.
+          </h2>
+        </div>
 
         <div className="mt-16 grid gap-12 md:grid-cols-3 md:gap-10 lg:gap-14">
           {pillars.map((pillar, index) => {
             const Icon = icons[index] ?? HeartPulse
             return (
-              <article key={pillar.title} className="border-t border-gold/35 pt-8">
+              <article
+                key={pillar.title}
+                data-reveal
+                data-reveal-delay={index}
+                className="border-t border-gold/35 pt-8"
+              >
                 <div className="flex items-center justify-between">
                   <Icon className="h-6 w-6 text-gold" aria-hidden="true" strokeWidth={1.4} />
                   <span className="font-serif text-[1.6rem] leading-none text-gold/55">

@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import { Cta } from '@/components/cta'
+import { JsonLd } from '@/components/json-ld'
 import { MedicalScholars } from '@/components/medical-scholars'
 import { PageHero } from '@/components/page-hero'
 import { programme } from '@/lib/site'
+import { breadcrumbJsonLd } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: 'The Medical Scholars Programme',
@@ -51,9 +53,12 @@ export default function MedicalScholarsPage() {
               year. Announcements will be made through this website once the programme is formally
               established.
             </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:gap-4">
+            <div className="mt-9 flex flex-wrap gap-3 sm:gap-4">
               <Cta href="/#contact" variant="dark">
                 Register an Enquiry
+              </Cta>
+              <Cta href="/#faq" variant="dark">
+                Read the Questions
               </Cta>
               <Cta href="/#transparency" variant="dark">
                 Transparency
@@ -62,6 +67,13 @@ export default function MedicalScholarsPage() {
           </div>
         </div>
       </section>
+
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: 'Home', path: '/' },
+          { name: 'The Medical Scholars Programme', path: '/medical-scholars' },
+        ])}
+      />
     </>
   )
 }

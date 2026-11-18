@@ -20,9 +20,12 @@ export default function NotFound() {
           The address you followed may have changed, or the page may not exist. The foundation
           website is being developed, so some sections are still to be added.
         </p>
-        <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:gap-4">
+        <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
           <Cta href="/" variant="dark">
             Return to the home page
+          </Cta>
+          <Cta href="/his-legacy" variant="dark">
+            His Legacy
           </Cta>
           <Cta href="/#contact" variant="dark">
             Contact
