@@ -7,6 +7,7 @@ import { HashScroll } from '@/components/hash-scroll'
 import { RevealObserver } from '@/components/reveal-observer'
 import { BackToTop } from '@/components/back-to-top'
 import { site } from '@/lib/site'
+import { siteUrl } from '@/lib/site-url'
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -22,8 +23,6 @@ const lato = Lato({
   variable: '--font-lato',
   display: 'swap',
 })
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
