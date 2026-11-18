@@ -3,6 +3,7 @@ import { LegacyStory } from '@/components/legacy-story'
 import { QuoteBand } from '@/components/quote-band'
 import { Philosophy } from '@/components/philosophy'
 import { MedicalScholars } from '@/components/medical-scholars'
+import { PilotCampaign } from '@/components/pilot-campaign'
 import { Roadmap } from '@/components/roadmap'
 import { Commitment } from '@/components/commitment'
 import { WaysToHelp } from '@/components/ways-to-help'
@@ -23,6 +24,7 @@ export default function HomePage() {
       <QuoteBand />
       <Philosophy />
       <MedicalScholars />
+      <PilotCampaign />
       <Roadmap />
       <Commitment />
       <WaysToHelp />

@@ -90,7 +90,7 @@ export function SiteHeader() {
             }`}
           />
           <span className="min-w-0">
-            <span className="block max-w-[15rem] text-[0.68rem] font-bold leading-[1.35] uppercase tracking-[0.14em] sm:max-w-[20rem] xl:max-w-[13rem] xl:text-[0.7rem] 2xl:max-w-[26rem]">
+            <span className="block max-w-[15rem] text-[0.68rem] font-bold leading-[1.35] uppercase tracking-[0.14em] sm:max-w-[20rem] xl:max-w-[11rem] xl:text-[0.7rem] 2xl:max-w-[26rem]">
               {site.name}
             </span>
             <span className="mt-1 block text-[0.6rem] uppercase tracking-[0.26em] text-sage">
@@ -99,7 +99,7 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <nav aria-label="Primary" className="hidden items-center gap-6 xl:flex xl:gap-7">
+        <nav aria-label="Primary" className="hidden items-center gap-5 xl:flex">
           {navItems.map((item) => {
             const active = isActive(item.href)
             return (
@@ -107,7 +107,7 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 aria-current={active ? 'page' : undefined}
-                className={`group relative whitespace-nowrap text-[0.64rem] font-bold uppercase tracking-[0.14em] transition-colors duration-200 hover:text-forest ${
+                className={`group relative whitespace-nowrap text-[0.62rem] font-bold uppercase tracking-[0.13em] transition-colors duration-200 hover:text-forest ${
                   active ? 'text-forest' : 'text-walnut/75'
                 }`}
               >

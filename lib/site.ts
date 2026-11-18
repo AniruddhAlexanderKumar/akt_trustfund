@@ -17,6 +17,7 @@ export const navItems: NavItem[] = [
   { label: 'His Legacy', href: '/his-legacy' },
   { label: 'Our Mission', href: '/#mission' },
   { label: 'Medical Scholars', href: '/#scholars' },
+  { label: 'Pilot 001', href: '/pilot-001' },
   { label: 'Our Initiatives', href: '/#initiatives' },
   { label: 'Transparency', href: '/#transparency' },
   { label: 'Contact', href: '/#contact' },
@@ -269,7 +270,7 @@ export const faq = {
     {
       question: 'How can I contribute or help?',
       answer:
-        'Please use the contact form. Contributions cannot be accepted until the trust is registered and a receipting process exists, but offers of mentorship, partnerships and other support are welcome now and will be recorded for when the programme opens.',
+        'Please use the contact form. Contributions to the foundation cannot be accepted until the trust is registered and a receipting process exists. The first initiative, Pilot 001, is separately funded by the family and a small circle of friends; it is not a public fundraising programme, and nothing is collected through this website. Offers of mentorship, partnerships and other support are welcome now.',
     },
     {
       question: 'How do I get in touch?',
