@@ -16,7 +16,7 @@ export const initiative = {
   location: 'Jamshedpur, Jharkhand, India',
 
   intro: [
-    'We are raising ₹50,000 to cover the educational expenses of one financially disadvantaged student in Jamshedpur, Jharkhand.',
+    'The foundation’s first initiative is to raise ₹50,000 to cover the educational expenses of one financially disadvantaged student in Jamshedpur, Jharkhand.',
     'The student is at school, and a year of fees, books and examination charges is more than the household can absorb. The fund is meant to cover those costs, so that the decision to stop studying is not made for want of money.',
     'Contributions are arranged directly with the family member coordinating the initiative — there is no payment gateway or donation button on this website — and every contribution is verified and published in the ledger before it is counted towards the target.',
   ],
@@ -42,7 +42,7 @@ export const initiative = {
   ],
 
   useOfFundsIntro:
-    'The funds are directed towards the selected student’s verified educational expenses.',
+    'Every rupee of this first initiative is directed towards the selected student’s verified educational expenses.',
   useOfFunds: [
     {
       title: 'School fees',
@@ -65,7 +65,7 @@ export const initiative = {
     'Where possible, payments go directly to the school or provider rather than in cash. Nothing is released without verification.',
 
   transparencyIntro:
-    'Every figure comes from verified entries. Nothing is counted towards the total until a contribution has been received and confirmed.',
+    'Every figure for this first initiative comes from verified entries. Nothing is counted towards the total until a contribution has been received and confirmed.',
 
   ledgerRules: [
     'Only verified contributions and expenditure appear — each entry is matched to a statement or receipt before publication.',
@@ -104,7 +104,7 @@ export const initiative = {
 
   finalCta: {
     heading: "HELP US FUND ONE STUDENT'S EDUCATION.",
-    body: '₹50,000 is our first target. Every verified contribution moves one student closer to an education they might otherwise go without.',
+    body: 'The foundation’s first initiative is to raise ₹50,000 for one student. Every verified contribution moves them closer to an education they might otherwise go without.',
     primary: { label: 'Enquire About Contributing', href: '/#contact' },
   },
 } as const
