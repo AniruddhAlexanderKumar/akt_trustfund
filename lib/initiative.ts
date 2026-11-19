@@ -65,7 +65,7 @@ export const initiative = {
     'Where possible, payments go directly to the school or provider rather than in cash. Nothing is released without verification.',
 
   transparencyIntro:
-    'Every figure comes from verified entries. Totals remain at zero until a contribution is received and confirmed.',
+    'Every figure comes from verified entries. Nothing is counted towards the total until a contribution has been received and confirmed.',
 
   ledgerRules: [
     'Only verified contributions and expenditure appear — each entry is matched to a statement or receipt before publication.',
