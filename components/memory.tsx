@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Eyebrow } from '@/components/section-heading'
 import { memory } from '@/lib/site'
 
@@ -5,6 +6,19 @@ import { memory } from '@/lib/site'
 export function Memory() {
   return (
     <section id="memory" aria-labelledby="memory-heading" className="section bg-ivory">
+      <div className="shell">
+        <div className="mb-14 max-w-[24rem]" data-reveal>
+          <Image
+            src="/images/akt-foundation-logo.png"
+            alt="The Late Dr. Anil Kumar Thakur Foundation"
+            width={1000}
+            height={603}
+            sizes="(min-width: 768px) 24rem, 80vw"
+            className="h-auto w-full"
+          />
+        </div>
+      </div>
+
       <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-5" data-reveal>
           <Eyebrow>{memory.eyebrow}</Eyebrow>

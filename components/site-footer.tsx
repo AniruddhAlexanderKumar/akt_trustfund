@@ -1,7 +1,7 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowUp } from 'lucide-react'
 import { AnchorLink } from '@/components/anchor-link'
-import { Emblem } from '@/components/emblem'
 import { navItems, photographyCredits, site } from '@/lib/site'
 
 export function SiteFooter() {
@@ -15,7 +15,15 @@ export function SiteFooter() {
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-5">
             <div className="flex items-center gap-4 text-gold">
-              <Emblem className="h-12 w-12 shrink-0" />
+              <span className="inline-flex shrink-0 items-center justify-center bg-ivory p-1.5">
+                <Image
+                  src="/images/akt-foundation-mark.png"
+                  alt=""
+                  width={400}
+                  height={400}
+                  className="h-12 w-12 object-contain"
+                />
+              </span>
               <p className="text-[0.72rem] font-bold uppercase leading-[1.5] tracking-[0.14em] text-ivory">
                 {site.name}
               </p>
