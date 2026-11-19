@@ -8,7 +8,7 @@ export function UseOfFunds() {
         <div className="lg:col-span-4" data-reveal>
           <Eyebrow>Use of funds</Eyebrow>
           <h2 id="use-heading" className="display-2 mt-6 max-w-[14ch] text-forest">
-            Where the ₹50,000 goes.
+            Where the money goes.
           </h2>
           <p className="body-copy mt-7 max-w-[38ch]">{initiative.useOfFundsIntro}</p>
         </div>

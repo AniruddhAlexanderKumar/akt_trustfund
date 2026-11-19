@@ -30,6 +30,7 @@ export default function PrivacyPage() {
           The only information you can submit is through the enquiry form, which asks for your name,
           email address, an optional telephone number, the subject of your enquiry and your message.
           If the form is not accepting submissions, nothing you type is transmitted or stored.
+          Questions can also be sent directly to {site.email} or {site.phone}.
         </p>
       </LegalSection>
 
@@ -78,7 +79,14 @@ export default function PrivacyPage() {
       <LegalSection heading="Your choices">
         <p>
           You may ask what enquiry correspondence is held about you, or ask for it to be deleted.
-          Requests can be made through the enquiry form on the home page.
+          Requests can be made by emailing{' '}
+          <a
+            href={`mailto:${site.email}`}
+            className="underline underline-offset-2 hover:text-forest"
+          >
+            {site.email}
+          </a>{' '}
+          or calling {site.phone}.
         </p>
       </LegalSection>
 

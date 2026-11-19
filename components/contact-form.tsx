@@ -228,7 +228,7 @@ export function ContactForm({ accepting }: { accepting: boolean }) {
         <p className="max-w-md text-[0.75rem] leading-relaxed text-walnut/55">
           {accepting
             ? 'Your enquiry is sent by email and is not stored on this website.'
-            : 'Submissions are disabled until an official enquiries inbox is configured.'}
+            : 'The form is not yet open. Please email or call instead.'}
         </p>
         <button
           type="submit"

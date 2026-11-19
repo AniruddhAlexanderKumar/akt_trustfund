@@ -21,7 +21,7 @@ export function FinalCta() {
         </h2>
         <p className="lede mx-auto mt-7 max-w-xl text-ivory/70">{finalCta.body}</p>
 
-        <div className="mt-11 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+        <div className="mt-11 flex justify-center">
           <Cta href={finalCta.primary.href} variant="gold">
             {finalCta.primary.label}
             <ArrowRight
@@ -29,14 +29,7 @@ export function FinalCta() {
               aria-hidden="true"
             />
           </Cta>
-          <Cta href={finalCta.secondary.href} variant="light">
-            {finalCta.secondary.label}
-          </Cta>
         </div>
-
-        <p className="mt-10 text-[0.72rem] leading-relaxed text-ivory/45">
-          No payment is collected through this website.
-        </p>
       </div>
     </section>
   )
