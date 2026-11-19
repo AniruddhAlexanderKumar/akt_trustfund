@@ -13,7 +13,7 @@ const sectionIds = navItems
   .map((item) => (item.href.includes('#') ? item.href.split('#')[1] : null))
   .filter((id): id is string => Boolean(id))
 
-const cta = { label: 'See the Target', href: '/#campaign' }
+const cta = { label: 'See the Target', href: '/#transparency' }
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)

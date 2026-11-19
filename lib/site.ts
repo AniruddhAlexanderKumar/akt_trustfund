@@ -27,7 +27,7 @@ export const hero = {
   eyebrow: 'In Memory. In Service. For Generations.',
   headline: 'The Late Dr. Anil Kumar Thakur Foundation',
   body: 'A charitable initiative in Jamshedpur, Jharkhand, raising ₹50,000 to support one student’s education.',
-  primaryCta: { label: 'See the Target', href: '/#campaign' },
+  primaryCta: { label: 'See the Target', href: '/#transparency' },
   secondaryCta: { label: 'Read the Ledger', href: '/#transparency' },
   image: '/images/hero-jamshedpur.jpg',
   imageAlt:
