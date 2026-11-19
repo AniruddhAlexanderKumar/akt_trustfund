@@ -1,4 +1,5 @@
 import { ShieldCheck } from 'lucide-react'
+import { FundraisingTracker } from '@/components/fundraising-tracker'
 import { FinancialSummaryTable, LedgerTable } from '@/components/ledger-table'
 import { Eyebrow } from '@/components/section-heading'
 import { initiative } from '@/lib/initiative'
@@ -36,6 +37,8 @@ export function Transparency() {
             <LedgerTable />
           </div>
         </div>
+
+        <FundraisingTracker className="mt-12" />
 
         <ul className="mt-10 grid gap-x-10 gap-y-5 border-t border-forest/12 pt-8 sm:grid-cols-2">
           {initiative.ledgerRules.map((rule) => (
