@@ -9,7 +9,6 @@ export function Campaign() {
   const figures = [
     { label: 'Amount raised', value: formatINR(totals.contributed) },
     { label: 'Amount remaining', value: formatINR(totals.remainingTarget) },
-    { label: 'Beneficiaries targeted', value: String(initiative.beneficiaries) },
     { label: 'Location', value: initiative.location },
   ]
 
@@ -52,7 +51,7 @@ export function Campaign() {
                 tone="dark"
               />
 
-              <dl className="mt-9 grid grid-cols-2 gap-x-8 gap-y-6 border-t border-ivory/15 pt-7 sm:grid-cols-4">
+              <dl className="mt-9 grid grid-cols-2 gap-x-8 gap-y-6 border-t border-ivory/15 pt-7 sm:grid-cols-3">
                 {figures.map((figure) => (
                   <div key={figure.label}>
                     <dt className="text-[0.52rem] font-bold uppercase tracking-[0.18em] text-ivory/45">
@@ -64,11 +63,6 @@ export function Campaign() {
                   </div>
                 ))}
               </dl>
-
-              <p className="mt-7 text-[0.72rem] leading-relaxed text-ivory/50">
-                Figures come from verified contributions only. Nothing is added in advance of a
-                verified entry in the ledger.
-              </p>
             </div>
           </div>
         </div>

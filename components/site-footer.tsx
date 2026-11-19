@@ -24,6 +24,24 @@ export function SiteFooter() {
               {site.tagline}
             </p>
             <p className="mt-4 text-sm leading-relaxed">{site.locationFull}</p>
+            <ul className="mt-4 space-y-1.5 text-sm">
+              <li>
+                <a
+                  href={`mailto:${site.email}`}
+                  className="break-words transition-colors duration-200 hover:text-gold"
+                >
+                  {site.email}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={site.phoneHref}
+                  className="transition-colors duration-200 hover:text-gold"
+                >
+                  {site.phone}
+                </a>
+              </li>
+            </ul>
           </div>
 
           <nav aria-label="Footer" className="lg:col-span-4">

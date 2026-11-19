@@ -36,7 +36,7 @@ export function Hero() {
 
         <h1
           id="hero-heading"
-          className="display-1 rise mt-8 max-w-[16ch] text-ivory"
+          className="display-1 rise mt-8 max-w-[20ch] text-ivory"
           style={{ animationDelay: '90ms' }}
         >
           {hero.headline}
@@ -64,13 +64,6 @@ export function Hero() {
             {hero.secondaryCta.label}
           </Cta>
         </div>
-
-        <p
-          className="rise mt-14 max-w-2xl border-t border-ivory/20 pt-6 text-[0.78rem] leading-relaxed tracking-[0.02em] text-ivory/60"
-          style={{ animationDelay: '340ms' }}
-        >
-          {hero.footline}
-        </p>
       </div>
     </section>
   )

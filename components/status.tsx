@@ -26,11 +26,6 @@ export function Status() {
                 </li>
               ))}
             </ul>
-
-            <p className="mt-7 border-t border-walnut/15 pt-5 text-[0.76rem] leading-relaxed text-walnut/60">
-              The name used across this website is the family&rsquo;s own name for the initiative. It
-              is not a statement of legal registration.
-            </p>
           </div>
         </div>
       </div>

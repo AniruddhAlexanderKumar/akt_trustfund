@@ -4,8 +4,11 @@ export const site = {
   tagline: 'A Legacy of Healing. A Future of Learning.',
   location: 'Jamshedpur, Jharkhand',
   locationFull: 'Jamshedpur, Jharkhand, India.',
+  email: 'akt-foundation@outlook.com',
+  phone: '+91 7019844552',
+  phoneHref: 'tel:+917019844552',
   description:
-    'An independently coordinated charitable initiative in memory of Late Dr. Anil Kumar Thakur, raising ₹50,000 to support the education of one student in Jamshedpur, Jharkhand.',
+    'The Late Dr. Anil Kumar Thakur Foundation is a charitable initiative in Jamshedpur, Jharkhand, raising ₹50,000 to support the education of one student.',
   disclaimer:
     'This is an independently coordinated charitable initiative in memory of Late Dr. Anil Kumar Thakur. It is not a registered trust, society, NGO or tax-exempt organisation, and no tax deduction is offered. Financial arrangements are supervised by an adult family member.',
 } as const
@@ -21,35 +24,35 @@ export const navItems: NavItem[] = [
 ]
 
 export const hero = {
-  eyebrow: 'In memory of Late Dr. Anil Kumar Thakur',
-  headline: "₹50,000 to support one student's education.",
-  body: 'An independently coordinated charitable initiative in Jamshedpur, Jharkhand. Contributions are verified before they are recorded in the public ledger.',
+  eyebrow: 'A Legacy of Healing. A Future of Learning.',
+  headline: 'The Late Dr. Anil Kumar Thakur Foundation',
+  body: 'A charitable initiative in Jamshedpur, Jharkhand, raising ₹50,000 to support one student’s education.',
   primaryCta: { label: 'See the Target', href: '/#campaign' },
   secondaryCta: { label: 'Read the Ledger', href: '/#transparency' },
-  footline: 'One student. One education. A continuing legacy.',
   image: '/images/hero-jamshedpur.jpg',
   imageAlt:
     'Evening light over the gardens, water channels and tree-lined avenues of Jubilee Park in Jamshedpur',
-}
+} as const
 
 export const memory = {
   eyebrow: 'In his memory',
   heading: 'Why this is being done in his name.',
   paragraphs: [
-    'Late Dr. Anil Kumar Thakur dedicated his professional life to medicine and to the people of Jamshedpur. He is remembered by his family for providing medical assistance to people who could not afford it.',
-    'He believed deeply in education. At a time when opportunities for girls were often restricted, he ensured that his three daughters received an education.',
-    'This initiative continues that conviction: that opportunity should not be determined by circumstance.',
+    'Late Dr. Anil Kumar Thakur dedicated his professional life to medicine and to the people of Jamshedpur, often treating those who could not afford care.',
+    'He believed opportunity should not be determined by circumstance. At a time when opportunities for girls were limited, he ensured that his three daughters received an education.',
   ],
 } as const
 
 export const contact = {
   eyebrow: 'Contact',
   heading: 'Enquiries about the initiative.',
-  body: 'Questions about the ₹50,000 initiative, the way contributions are handled, or the public ledger are welcome. This form is the only channel published on this website: no postal address or telephone number is given out.',
-  note: 'Financial arrangements are supervised by the responsible adult family member. No payment is collected through this website.',
+  body: 'Questions about the initiative, the way contributions are handled, or the public ledger are welcome.',
+  email: { label: 'akt-foundation@outlook.com', href: 'mailto:akt-foundation@outlook.com' },
+  phone: { label: '+91 7019844552', href: 'tel:+917019844552' },
+  note: 'No payment is collected through this website.',
   pendingTitle: 'This form is not yet accepting submissions.',
   pendingBody:
-    'Online enquiries will open once an official inbox and enquiry-handling arrangements are in place. No message has been sent, and nothing you type here is stored or transmitted.',
+    'Online enquiries will open once delivery is configured. In the meantime, please write to akt-foundation@outlook.com or call +91 7019844552. Nothing typed here is stored or transmitted.',
 } as const
 
 export const photographyCredits = [

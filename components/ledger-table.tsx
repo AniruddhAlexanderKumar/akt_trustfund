@@ -138,9 +138,8 @@ export function LedgerTable() {
                   <p className="font-serif text-[1.15rem] leading-snug text-forest">
                     No verified transactions have been recorded yet.
                   </p>
-                  <p className="mx-auto mt-3 max-w-md text-[0.82rem] leading-relaxed text-walnut/60">
-                    The ledger opens with its first verified entry. Until then, every figure on this
-                    page remains at zero.
+                  <p className="mx-auto mt-2 max-w-md text-[0.82rem] leading-relaxed text-walnut/60">
+                    The ledger opens with its first verified entry.
                   </p>
                 </td>
               </tr>

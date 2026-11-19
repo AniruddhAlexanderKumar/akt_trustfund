@@ -27,7 +27,7 @@ const lato = Lato({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "₹50,000 to Support One Student's Education | Jamshedpur",
+    default: `${site.name} — Jamshedpur`,
     template: `%s | ${site.shortName}`,
   },
   description: site.description,
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     url: '/',
     siteName: site.name,
-    title: "₹50,000 to Support One Student's Education",
+    title: 'The Late Dr. Anil Kumar Thakur Foundation — Jamshedpur',
     description: site.description,
     images: [
       {
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "₹50,000 to Support One Student's Education",
+    title: 'The Late Dr. Anil Kumar Thakur Foundation — Jamshedpur',
     description: site.description,
     images: ['/images/hero-jamshedpur.jpg'],
   },
@@ -77,6 +77,8 @@ const organisationJsonLd = {
   alternateName: site.shortName,
   description: site.description,
   slogan: site.tagline,
+  email: site.email,
+  telephone: site.phone,
   areaServed: { '@type': 'Place', name: 'Jamshedpur, Jharkhand, India' },
   disambiguatingDescription:
     'An independently coordinated charitable initiative. Not a registered trust, society, NGO or tax-exempt organisation.',

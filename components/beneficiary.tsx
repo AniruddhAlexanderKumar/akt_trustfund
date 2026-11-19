@@ -18,7 +18,7 @@ export function Beneficiary() {
           </div>
         </div>
 
-        <div className="mt-14 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
           {initiative.beneficiaryCriteria.map((criterion, index) => (
             <article
               key={criterion.title}

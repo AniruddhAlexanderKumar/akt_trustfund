@@ -49,12 +49,6 @@ export function Transparency() {
             </li>
           ))}
         </ul>
-
-        <p className="mt-8 max-w-3xl border-l-2 border-forest/20 pl-5 text-[0.78rem] leading-relaxed text-walnut/55">
-          The ledger is maintained by the adult family member overseeing the funds, and is updated
-          only after a transaction has been verified. There are no editing controls or administrative
-          credentials on this website.
-        </p>
       </div>
     </section>
   )
