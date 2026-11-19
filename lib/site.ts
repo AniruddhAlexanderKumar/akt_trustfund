@@ -38,8 +38,9 @@ export const memory = {
   eyebrow: 'In his memory',
   heading: 'Why this is being done in his name.',
   paragraphs: [
-    'Late Dr. Anil Kumar Thakur dedicated his professional life to medicine and to the people of Jamshedpur, often treating those who could not afford care.',
-    'He believed opportunity should not be determined by circumstance. At a time when opportunities for girls were limited, he ensured that his three daughters received an education.',
+    'This initiative is being undertaken in memory of Dr. Anil Kumar Thakur, who practised medicine in Jamshedpur and devoted much of his professional life to treating patients, including those who could not afford medical care.',
+    'He also believed strongly in education, ensuring that all three of his daughters received an education at a time when that opportunity was not equally accessible to girls.',
+    'By supporting a student’s education in his name, we hope to carry forward two things that defined his life: access to education and service to others. This first initiative is a practical expression of those values, turning his legacy into an opportunity for someone who needs it.',
   ],
 } as const
 
