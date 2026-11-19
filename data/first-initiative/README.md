@@ -13,9 +13,11 @@ repository, which is the access control for the ledger.
 
 1. **Verified only.** An entry is published only when it has `"verified": true`
    and a `"verifiedOn"` date. Anything else is ignored by the site.
-2. **No personal data.** Never store a donor's full name, phone number, UPI ID,
-   bank account number, transaction identifier, address or any student's
-   details here. Use an anonymised label such as `"Family Contributor 01"`.
+2. **No personal data.** Never store a donor's phone number, email address, UPI
+   ID, bank account number, transaction identifier, address or any student's
+   details here. Anonymous donors get an anonymised label such as
+   `"Family Contributor 01"`; a donor's name may be used only if they have asked
+   to be named.
 3. **References are codes.** `reference` must match `XX-00`
    (two to five uppercase letters, a hyphen, two to four digits), for example
    `FC-01` for a contribution or `EXP-01` for an expenditure.

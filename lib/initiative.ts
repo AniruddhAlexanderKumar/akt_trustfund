@@ -17,6 +17,28 @@ export const initiative = {
 
   intro: [
     'We are raising ₹50,000 to cover the educational expenses of one financially disadvantaged student in Jamshedpur, Jharkhand.',
+    'The student is at school, and a year of fees, books and examination charges is more than the household can absorb. The fund is meant to cover those costs, so that the decision to stop studying is not made for want of money.',
+    'Contributions are arranged directly with the family member coordinating the initiative — there is no payment gateway or donation button on this website — and every contribution is verified and published in the ledger before it is counted towards the target.',
+  ],
+
+  processHeading: 'How it works',
+  process: [
+    {
+      title: 'A contribution is made',
+      body: 'Money reaches the family member coordinating the initiative directly. Nothing is collected through this website.',
+    },
+    {
+      title: 'It is verified',
+      body: 'The amount is matched to a bank or UPI record before it is counted towards the target.',
+    },
+    {
+      title: 'The expense is confirmed',
+      body: 'The school or provider confirms that the fees, books or examination charges are current and payable.',
+    },
+    {
+      title: 'Paid, then published',
+      body: 'The provider is paid, and both the contribution and the expenditure are entered in the public ledger.',
+    },
   ],
 
   useOfFundsIntro:
@@ -47,7 +69,7 @@ export const initiative = {
 
   ledgerRules: [
     'Only verified contributions and expenditure appear — each entry is matched to a statement or receipt before publication.',
-    'Donors appear under anonymised labels such as "Family Contributor 01". No UPI details, bank information, telephone numbers or transaction identifiers are published.',
+    'Donors who chose to be anonymous appear under labels such as “Family Contributor 01”, and a donor is named only if they have asked to be. No UPI details, bank information, telephone numbers or transaction identifiers are published.',
     'The running balance is calculated from the entries above it, so the table reconciles to the totals.',
   ],
 
