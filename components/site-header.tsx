@@ -1,11 +1,11 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { AnchorLink } from '@/components/anchor-link'
-import { Emblem } from '@/components/emblem'
 import { ScrollProgress } from '@/components/scroll-progress'
 import { navItems, site } from '@/lib/site'
 
@@ -84,8 +84,13 @@ export function SiteHeader() {
           aria-label={`${site.name} — home`}
           className="flex items-center gap-3.5 text-forest lg:gap-4"
         >
-          <Emblem
-            className={`h-11 w-11 shrink-0 transition-transform duration-500 lg:h-[52px] lg:w-[52px] ${
+          <Image
+            src="/images/akt-foundation-mark.png"
+            alt=""
+            width={400}
+            height={400}
+            priority
+            className={`h-11 w-11 shrink-0 object-contain transition-transform duration-500 lg:h-[54px] lg:w-[54px] ${
               scrolled ? 'scale-95' : 'scale-100'
             }`}
           />

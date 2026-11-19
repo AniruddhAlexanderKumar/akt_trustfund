@@ -1,7 +1,7 @@
 export const site = {
   name: 'The Late Dr. Anil Kumar Thakur Foundation',
   shortName: 'AKT Foundation',
-  tagline: 'A Legacy of Healing. A Future of Learning.',
+  tagline: 'In Memory. In Service. For Generations.',
   location: 'Jamshedpur, Jharkhand',
   locationFull: 'Jamshedpur, Jharkhand, India.',
   email: 'akt-foundation@outlook.com',
@@ -24,7 +24,7 @@ export const navItems: NavItem[] = [
 ]
 
 export const hero = {
-  eyebrow: 'A Legacy of Healing. A Future of Learning.',
+  eyebrow: 'In Memory. In Service. For Generations.',
   headline: 'The Late Dr. Anil Kumar Thakur Foundation',
   body: 'A charitable initiative in Jamshedpur, Jharkhand, raising ₹50,000 to support one student’s education.',
   primaryCta: { label: 'See the Target', href: '/#campaign' },
