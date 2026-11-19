@@ -48,10 +48,10 @@ export default function PrivacyPage() {
 
       <LegalSection heading="The public ledger">
         <p>
-          The transaction ledger publishes no personal information. Contributions and expenditure
-          appear only as anonymised references and labels, such as “Family Contributor 01”. No donor
-          name, telephone number, UPI identifier, bank detail or private transaction identifier is
-          published.
+          The transaction ledger publishes no contact or payment information. Donors who chose to be
+          anonymous appear under labels such as “Family Contributor 01”, and a donor is named only if
+          they have asked to be. No telephone number, UPI identifier, bank detail or private
+          transaction identifier is published.
         </p>
         <p>
           The identity of the student supported by the initiative is not published. No name,
