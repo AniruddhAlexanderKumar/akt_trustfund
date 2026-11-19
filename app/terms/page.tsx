@@ -14,9 +14,9 @@ export default function TermsPage() {
     <LegalPage title="Terms of Use" updated="November 2026">
       <LegalSection heading="Purpose of this website">
         <p>
-          This website provides information about one initiative being undertaken in memory of Late
-          Dr. Anil Kumar Thakur: raising ₹50,000 to support the education of one student in
-          Jamshedpur, Jharkhand.
+          This website provides information about the first initiative of The Late Dr. Anil Kumar
+          Thakur Foundation: raising ₹50,000 to support the education of one student in Jamshedpur,
+          Jharkhand.
         </p>
       </LegalSection>
 

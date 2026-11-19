@@ -8,7 +8,7 @@ export const site = {
   phone: '+91 7019844552',
   phoneHref: 'tel:+917019844552',
   description:
-    'The Late Dr. Anil Kumar Thakur Foundation is a charitable initiative in Jamshedpur, Jharkhand, raising ₹50,000 to support the education of one student.',
+    'The Late Dr. Anil Kumar Thakur Foundation is a charitable initiative in Jamshedpur, Jharkhand. Its first initiative is to raise ₹50,000 to support the education of one student.',
   disclaimer:
     'This is an independently coordinated charitable initiative in memory of Late Dr. Anil Kumar Thakur. It is not a registered trust, society, NGO or tax-exempt organisation, and no tax deduction is offered. Financial arrangements are supervised by an adult family member.',
 } as const
@@ -26,7 +26,7 @@ export const navItems: NavItem[] = [
 export const hero = {
   eyebrow: 'In Memory. In Service. For Generations.',
   headline: 'The Late Dr. Anil Kumar Thakur Foundation',
-  body: 'A charitable initiative in Jamshedpur, Jharkhand, raising ₹50,000 to support one student’s education.',
+  body: 'Our first initiative: raising ₹50,000 to support one student’s education in Jamshedpur, Jharkhand.',
   primaryCta: { label: 'See the Target', href: '/#transparency' },
   secondaryCta: { label: 'Read the Ledger', href: '/#transparency' },
   image: '/images/hero-jamshedpur.jpg',
@@ -47,7 +47,7 @@ export const memory = {
 export const contact = {
   eyebrow: 'Contact',
   heading: 'Enquiries about the initiative.',
-  body: 'Questions about the initiative, the way contributions are handled, or the public ledger are welcome.',
+  body: 'Questions about this first initiative, the way contributions are handled, or the public ledger are welcome.',
   email: { label: 'akt-foundation@outlook.com', href: 'mailto:akt-foundation@outlook.com' },
   phone: { label: '+91 7019844552', href: 'tel:+917019844552' },
   note: 'No payment is collected through this website.',

@@ -31,7 +31,10 @@ export function SiteFooter() {
             <p className="mt-6 font-serif text-[1.35rem] leading-snug text-gold italic">
               {site.tagline}
             </p>
-            <p className="mt-4 text-sm leading-relaxed">{site.locationFull}</p>
+            <p className="mt-4 text-[0.82rem] leading-relaxed text-ivory/70">
+              First initiative: raising ₹50,000 for one student’s education.
+            </p>
+            <p className="mt-3 text-sm leading-relaxed">{site.locationFull}</p>
             <ul className="mt-4 space-y-1.5 text-sm">
               <li>
                 <a

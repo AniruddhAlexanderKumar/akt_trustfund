@@ -17,8 +17,8 @@ export default function NotFound() {
           This page could not be found.
         </h1>
         <p className="body-copy mt-7 max-w-[52ch]">
-          The address you followed may have changed. The website now describes a single initiative:
-          raising ₹50,000 to support one student&rsquo;s education in Jamshedpur.
+          The address you followed may have changed. The website now describes the foundation&rsquo;s
+          first initiative: raising ₹50,000 to support one student&rsquo;s education in Jamshedpur.
         </p>
         <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
           <Cta href="/" variant="dark">

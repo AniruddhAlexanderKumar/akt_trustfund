@@ -25,7 +25,10 @@ export function FundraisingTracker({ className = '' }: { className?: string }) {
     >
       <div className="grid gap-10 p-8 sm:p-10 lg:grid-cols-12 lg:items-center lg:gap-14 lg:p-12">
         <div className="lg:col-span-5">
-          <p className="text-[0.56rem] font-bold uppercase tracking-[0.24em] text-gold/80">
+          <p className="text-[0.5rem] font-bold uppercase tracking-[0.26em] text-ivory/45">
+            First initiative
+          </p>
+          <p className="mt-2 text-[0.56rem] font-bold uppercase tracking-[0.24em] text-gold/80">
             Fundraising target
           </p>
           <p className="mt-4 font-serif text-[clamp(2.6rem,5vw,3.9rem)] leading-none text-ivory tabular-nums">
