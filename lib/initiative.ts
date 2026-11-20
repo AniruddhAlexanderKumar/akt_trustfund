@@ -69,7 +69,7 @@ export const initiative = {
 
   ledgerRules: [
     'Only verified contributions and expenditure appear — each entry is matched to a statement or receipt before publication.',
-    'Donors who chose to be anonymous appear under labels such as “Family Contributor 01”, and a donor is named only if they have asked to be. No UPI details, bank information, telephone numbers or transaction identifiers are published.',
+    'Donors who chose to be anonymous are recorded simply as “Anonymous”, and a donor is named only if they have asked to be. No UPI details, bank information, telephone numbers or transaction identifiers are published.',
     'The running balance is calculated from the entries above it, so the table reconciles to the totals.',
   ],
 

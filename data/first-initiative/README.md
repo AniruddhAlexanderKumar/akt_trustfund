@@ -15,9 +15,9 @@ repository, which is the access control for the ledger.
    and a `"verifiedOn"` date. Anything else is ignored by the site.
 2. **No personal data.** Never store a donor's phone number, email address, UPI
    ID, bank account number, transaction identifier, address or any student's
-   details here. Anonymous donors get an anonymised label such as
-   `"Family Contributor 01"`; a donor's name may be used only if they have asked
-   to be named.
+   details here. Anonymous donors are labelled `"Anonymous"` (add a reference,
+   such as `"Anonymous contributor 01"`, if there are several); a donor's name may
+   be used only if they have asked to be named.
 3. **References are codes.** `reference` must match `XX-00`
    (two to five uppercase letters, a hyphen, two to four digits), for example
    `FC-01` for a contribution or `EXP-01` for an expenditure.
@@ -34,7 +34,7 @@ repository, which is the access control for the ledger.
   "date": "2026-12-01",
   "verifiedOn": "2026-12-02",
   "kind": "contribution",
-  "label": "Family Contributor 01",
+  "label": "Anonymous",
   "amount": 10000,
   "note": "Optional, public, no personal detail.",
   "evidence": { "label": "Receipt (redacted)", "href": "/documents/first-initiative-fc-01.pdf" },
