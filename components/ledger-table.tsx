@@ -56,10 +56,16 @@ export function FinancialSummaryTable() {
   )
 }
 
+// The header and totals rows are pinned inside the scrolling area, so the
+// column labels and the running totals stay in view while the entries scroll.
 const headCell =
-  'px-4 py-3.5 text-left text-[0.56rem] font-bold uppercase tracking-[0.2em] text-sage first:pl-6 last:pr-6'
+  'sticky top-0 z-10 bg-ivory px-4 py-3.5 text-left text-[0.56rem] font-bold uppercase tracking-[0.2em] text-sage shadow-[inset_0_-1px_0_rgba(40,59,53,0.18)] first:pl-6 last:pr-6'
 const bodyCell = 'px-4 py-5 text-[0.88rem] leading-relaxed text-walnut/85 first:pl-6 last:pr-6'
 const amountCell = 'px-4 py-5 text-right text-[0.9rem] text-forest tabular-nums last:pr-6'
+const footHeadCell =
+  'sticky bottom-0 z-10 bg-ivory px-4 py-4 pl-6 text-left text-[0.56rem] font-bold uppercase tracking-[0.2em] text-sage shadow-[inset_0_1px_0_rgba(40,59,53,0.18)]'
+const footCell =
+  'sticky bottom-0 z-10 bg-ivory px-4 py-4 text-right text-[0.9rem] text-forest tabular-nums shadow-[inset_0_1px_0_rgba(40,59,53,0.18)]'
 
 export function LedgerTable() {
   const { entries, totals } = ledger
@@ -67,13 +73,18 @@ export function LedgerTable() {
 
   return (
     <div className="border border-forest/15 bg-white">
-      <div className="overflow-x-auto" role="region" aria-label="Transaction ledger" tabIndex={0}>
+      <div
+        className="max-h-[20rem] overflow-auto overscroll-contain"
+        role="region"
+        aria-label="Transaction ledger"
+        tabIndex={0}
+      >
         <table className="w-full min-w-[44rem] border-collapse text-left">
           <caption className="sr-only">
             Verified contributions and actual expenditure, in date order, with a running balance.
           </caption>
           <thead>
-            <tr className="border-b border-forest/20 bg-ivory/70">
+            <tr>
               <th scope="col" className={`${headCell} w-[8.5rem]`}>
                 Date
               </th>
@@ -147,30 +158,21 @@ export function LedgerTable() {
           </tbody>
 
           <tfoot>
-            <tr className="border-t border-forest/20 bg-ivory/70">
-              <th
-                scope="row"
-                colSpan={2}
-                className="px-4 py-4 pl-6 text-left text-[0.56rem] font-bold uppercase tracking-[0.2em] text-sage"
-              >
+            <tr>
+              <th scope="row" colSpan={2} className={footHeadCell}>
                 Totals
               </th>
-              <td className="px-4 py-4 text-right text-[0.9rem] text-forest tabular-nums">
-                {formatINR(totals.contributed)}
-              </td>
-              <td className="px-4 py-4 text-right text-[0.9rem] text-forest tabular-nums">
-                {formatINR(totals.spent)}
-              </td>
-              <td className="px-4 py-4 pr-6 text-right text-[0.9rem] font-bold text-forest tabular-nums">
-                {formatINR(totals.balance)}
-              </td>
+              <td className={footCell}>{formatINR(totals.contributed)}</td>
+              <td className={footCell}>{formatINR(totals.spent)}</td>
+              <td className={`${footCell} pr-6 font-bold`}>{formatINR(totals.balance)}</td>
             </tr>
           </tfoot>
         </table>
       </div>
 
-      <p className="border-t border-forest/10 bg-ivory/40 px-6 py-3 text-[0.7rem] leading-relaxed text-walnut/55 sm:hidden">
-        Scroll the ledger sideways to see every column.
+      <p className="border-t border-forest/10 bg-ivory/40 px-6 py-3 text-[0.7rem] leading-relaxed text-walnut/55">
+        Scroll inside the ledger to read every entry — the column headings and the totals stay in
+        view. On a narrow screen, scroll sideways for all columns.
       </p>
     </div>
   )
