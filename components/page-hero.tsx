@@ -26,7 +26,7 @@ export function PageHero({
         {breadcrumb ? (
           <AnchorLink
             href={breadcrumb.href}
-            className="group mb-9 inline-flex items-center gap-2.5 text-[0.58rem] font-bold uppercase tracking-[0.22em] text-ivory/55 transition-colors duration-200 hover:text-gold"
+            className="group mb-9 inline-flex items-center gap-3 label-caps text-ivory/55 transition-colors duration-200 hover:text-gold"
           >
             <ArrowLeft
               className="h-3 w-3 transition-transform duration-300 group-hover:-translate-x-1"
@@ -36,9 +36,9 @@ export function PageHero({
           </AnchorLink>
         ) : null}
         <Eyebrow tone="light">{eyebrow}</Eyebrow>
-        <h1 className="display-2 rise mt-6 max-w-[24ch] text-ivory">{title}</h1>
+        <h1 className="display-2 rise mt-6 measure-heading text-ivory">{title}</h1>
         {intro ? (
-          <p className="lede rise mt-7 max-w-2xl text-ivory/72" style={{ animationDelay: '120ms' }}>
+          <p className="text-lead rise mt-7 max-w-2xl text-ivory/72" style={{ animationDelay: '120ms' }}>
             {intro}
           </p>
         ) : null}

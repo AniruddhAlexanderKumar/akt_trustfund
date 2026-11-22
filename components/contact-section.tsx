@@ -14,10 +14,10 @@ export function ContactSection({ accepting }: { accepting: boolean }) {
       <div className="shell grid gap-14 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-5" data-reveal>
           <Eyebrow>{contact.eyebrow}</Eyebrow>
-          <h2 id="contact-heading" className="display-2 mt-6 max-w-[16ch] text-forest">
+          <h2 id="contact-heading" className="display-2 mt-6 measure-heading text-forest">
             {contact.heading}
           </h2>
-          <p className="body-copy mt-7 max-w-[46ch]">{contact.body}</p>
+          <p className="body-copy mt-7 measure-narrow">{contact.body}</p>
 
           <ul className="mt-9 divide-y divide-forest/12 border-y border-forest/12">
             {details.map(({ icon: Icon, label, value }) => (
@@ -32,10 +32,10 @@ export function ContactSection({ accepting }: { accepting: boolean }) {
                     strokeWidth={1.7}
                   />
                   <span className="min-w-0">
-                    <span className="block text-[0.52rem] font-bold uppercase tracking-[0.22em] text-sage">
+                    <span className="block label-caps text-sage">
                       {label}
                     </span>
-                    <span className="mt-1 block break-words text-[0.95rem] text-forest group-hover:text-walnut">
+                    <span className="mt-1 block break-words text-body text-forest group-hover:text-walnut">
                       {value.label}
                     </span>
                   </span>
@@ -45,7 +45,7 @@ export function ContactSection({ accepting }: { accepting: boolean }) {
           </ul>
 
           <div className="mt-8 border-l-2 border-gold pl-5">
-            <p className="text-[0.8rem] leading-relaxed text-walnut/70">{contact.note}</p>
+            <p className="text-small text-walnut/70">{contact.note}</p>
           </div>
         </div>
 
@@ -53,8 +53,8 @@ export function ContactSection({ accepting }: { accepting: boolean }) {
           <div className="border border-forest/15 bg-white p-7 sm:p-10">
             {!accepting ? (
               <div role="status" className="mb-8 border-t-2 border-walnut/30 pt-4">
-                <p className="text-[0.85rem] font-bold text-walnut">{contact.pendingTitle}</p>
-                <p className="mt-1.5 text-[0.8rem] leading-relaxed text-walnut/75">
+                <p className="text-small font-bold text-walnut">{contact.pendingTitle}</p>
+                <p className="mt-2 text-small text-walnut/75">
                   {contact.pendingBody}
                 </p>
               </div>

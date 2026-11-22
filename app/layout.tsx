@@ -49,18 +49,11 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: 'The Late Dr. Anil Kumar Thakur Foundation — Jamshedpur',
     description: site.description,
-    images: [
-      {
-        url: '/images/hero-jamshedpur.jpg',
-        alt: 'Jubilee Park in Jamshedpur, Jharkhand',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'The Late Dr. Anil Kumar Thakur Foundation — Jamshedpur',
     description: site.description,
-    images: ['/images/hero-jamshedpur.jpg'],
   },
   robots: { index: true, follow: true },
 }
@@ -100,7 +93,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-forest focus:px-5 focus:py-3 focus:text-xs focus:font-bold focus:uppercase focus:tracking-[0.18em] focus:text-ivory"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-forest focus:px-5 focus:py-3 focus:text-caption focus:font-bold focus:uppercase focus:tracking-[0.18em] focus:text-ivory"
         >
           Skip to content
         </a>

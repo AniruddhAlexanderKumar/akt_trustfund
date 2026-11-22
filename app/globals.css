@@ -8,8 +8,78 @@
   --color-sage: #5f6f60;
   --color-charcoal: #242923;
 
+  /* Two derived tints, so hover states never introduce a new hue. */
+  --color-clay: #8a3b2e;
+  --color-gold-light: #e7d7b3;
+
   --font-sans: var(--font-lato), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+}
+
+/* Type ramp ---------------------------------------------------------------
+   Cormorant Garamond for headings, Lato for everything else. These seven
+   steps and the two display sizes are the only font sizes on the site; each
+   step owns its line height, so nothing needs a per-component leading. */
+
+@utility text-micro {
+  font-size: 0.625rem; /* 10px */
+  line-height: 1.5;
+}
+
+@utility text-caption {
+  font-size: 0.75rem; /* 12px */
+  line-height: 1.65;
+}
+
+@utility text-small {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.7;
+}
+
+@utility text-body {
+  font-size: 1rem; /* 16px */
+  line-height: 1.8;
+}
+
+@utility text-lead {
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.7;
+}
+
+@utility heading-4 {
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.35;
+}
+
+@utility heading-3 {
+  font-size: clamp(1.4rem, 1.9vw, 1.7rem);
+  line-height: 1.25;
+}
+
+@utility heading-2 {
+  font-size: clamp(1.9rem, 3.4vw, 2.75rem);
+  line-height: 1.15;
+}
+
+/* Three measures cover every text block: long-form body, section intros and
+   display headings. Width caps are typographic, not spacing. */
+@utility measure {
+  max-width: 62ch;
+}
+
+@utility measure-narrow {
+  max-width: 46ch;
+}
+
+@utility measure-heading {
+  max-width: 20ch;
+}
+
+/* Standing figures: totals, balances, counters. */
+@utility figure {
+  font-size: 1.75rem; /* 28px */
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
 }
 
 @layer base {
@@ -81,15 +151,6 @@
     padding-block: clamp(4.5rem, 8.5vw, 8rem);
   }
 
-  .eyebrow {
-    font-family: var(--font-sans);
-    font-size: 0.6875rem;
-    font-weight: 700;
-    letter-spacing: 0.3em;
-    line-height: 1.4;
-    text-transform: uppercase;
-  }
-
   .display-1 {
     font-size: clamp(2.6rem, 5.4vw, 5.1rem);
     line-height: 1.03;
@@ -102,11 +163,6 @@
     letter-spacing: -0.012em;
   }
 
-  .lede {
-    font-size: clamp(1.02rem, 1.15vw, 1.18rem);
-    line-height: 1.75;
-  }
-
   .body-copy {
     font-size: 1rem;
     line-height: 1.8;
@@ -115,11 +171,70 @@
 
   /* One definition for the small-caps labels used above tables and figures. */
   .label-caps {
-    font-size: 0.56rem;
+    font-family: var(--font-sans);
+    font-size: 0.625rem; /* 10px */
     font-weight: 700;
-    letter-spacing: 0.24em;
+    letter-spacing: 0.22em;
     line-height: 1.4;
     text-transform: uppercase;
+  }
+
+  /* Buttons ---------------------------------------------------------------
+     One shape, one label style, one transition; only the fill changes with
+     the surface it sits on. Square corners match every other block. */
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 1.75rem;
+    border: 1px solid transparent;
+    font-family: var(--font-sans);
+    font-size: 0.75rem; /* 12px */
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    line-height: 1;
+    text-transform: uppercase;
+    transition:
+      background-color 200ms ease,
+      border-color 200ms ease,
+      color 200ms ease;
+  }
+
+  .btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+  }
+
+  .btn-gold {
+    background-color: var(--color-gold);
+    color: var(--color-forest);
+  }
+
+  .btn-gold:hover:not(:disabled) {
+    background-color: var(--color-gold-light);
+  }
+
+  .btn-light {
+    border-color: color-mix(in srgb, var(--color-ivory) 35%, transparent);
+    color: var(--color-ivory);
+  }
+
+  .btn-light:hover:not(:disabled) {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+  }
+
+  .btn-dark {
+    border-color: color-mix(in srgb, var(--color-forest) 25%, transparent);
+    color: var(--color-forest);
+  }
+
+  .btn-dark:hover:not(:disabled) {
+    border-color: var(--color-forest);
+    background-color: var(--color-forest);
+    color: var(--color-ivory);
   }
 
   /* Quieter rhythm for secondary sections, so the page is not a run of

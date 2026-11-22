@@ -10,12 +10,12 @@ export function Transparency() {
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5" data-reveal>
             <Eyebrow>Transparency</Eyebrow>
-            <h2 id="transparency-heading" className="display-2 mt-6 max-w-[16ch] text-forest">
+            <h2 id="transparency-heading" className="display-2 mt-6 measure-heading text-forest">
               The money, in full.
             </h2>
           </div>
           <div className="lg:col-span-6 lg:col-start-7 lg:pt-14" data-reveal data-reveal-delay="1">
-            <p className="body-copy max-w-[52ch]">{initiative.transparencyIntro}</p>
+            <p className="body-copy measure">{initiative.transparencyIntro}</p>
           </div>
         </div>
 
@@ -43,7 +43,7 @@ export function Transparency() {
           {initiative.ledgerRules.map((rule) => (
             <li
               key={rule}
-              className="border-b border-forest/10 py-4 text-[0.85rem] leading-[1.78] text-walnut/75"
+              className="border-b border-forest/10 py-4 text-small text-walnut/75"
             >
               {rule}
             </li>

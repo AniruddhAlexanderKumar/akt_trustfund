@@ -25,19 +25,19 @@ export function FundraisingTracker({ className = '' }: { className?: string }) {
     >
       <div className="grid gap-10 p-8 sm:p-10 lg:grid-cols-12 lg:items-center lg:gap-14 lg:p-12">
         <div className="lg:col-span-5">
-          <p className="text-[0.5rem] font-bold uppercase tracking-[0.26em] text-ivory/45">
+          <p className="label-caps text-ivory/45">
             First initiative
           </p>
           <p className="mt-2 label-caps text-gold/80">
             Fundraising target
           </p>
-          <p className="mt-4 font-serif text-[clamp(2.6rem,5vw,3.9rem)] leading-none text-ivory tabular-nums">
+          <p className="mt-4 display-2 text-ivory tabular-nums">
             {formatINR(initiative.targetAmount)}
           </p>
-          <p className="mt-3 text-[0.62rem] font-bold uppercase tracking-[0.24em] text-ivory/50">
+          <p className="mt-3 label-caps text-ivory/50">
             INR
           </p>
-          <p className="mt-7 inline-block border border-gold/35 px-3.5 py-2 text-[0.54rem] font-bold uppercase tracking-[0.22em] text-gold">
+          <p className="mt-7 inline-block border border-gold/35 px-4 py-2 label-caps text-gold">
             {status}
           </p>
         </div>
@@ -52,10 +52,10 @@ export function FundraisingTracker({ className = '' }: { className?: string }) {
           <dl className="mt-9 grid grid-cols-2 gap-x-8 gap-y-6 border-t border-ivory/15 pt-7 sm:grid-cols-3">
             {figures.map((figure) => (
               <div key={figure.label}>
-                <dt className="text-[0.52rem] font-bold uppercase tracking-[0.18em] text-ivory/45">
+                <dt className="label-caps text-ivory/45">
                   {figure.label}
                 </dt>
-                <dd className="mt-2 text-[0.9rem] leading-snug text-ivory tabular-nums">
+                <dd className="mt-2 text-small leading-snug text-ivory tabular-nums">
                   {figure.value}
                 </dd>
               </div>

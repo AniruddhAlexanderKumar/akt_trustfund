@@ -78,11 +78,11 @@ export function SiteHeader() {
           : 'border-forest/10'
       }`}
     >
-      <div className="shell flex h-[74px] items-center justify-between gap-6 lg:h-[86px]">
+      <div className="shell flex h-18 items-center justify-between gap-6 lg:h-22">
         <Link
           href="/"
           aria-label={`${site.name} — home`}
-          className="flex items-center gap-3.5 text-forest lg:gap-4"
+          className="flex items-center gap-4 text-forest lg:gap-4"
         >
           <Image
             src="/images/akt-foundation-mark.png"
@@ -90,15 +90,15 @@ export function SiteHeader() {
             width={400}
             height={400}
             priority
-            className={`h-11 w-11 shrink-0 object-contain transition-transform duration-500 lg:h-[54px] lg:w-[54px] ${
+            className={`h-11 w-11 shrink-0 object-contain transition-transform duration-500 lg:h-14 lg:w-14 ${
               scrolled ? 'scale-95' : 'scale-100'
             }`}
           />
           <span className="min-w-0">
-            <span className="block max-w-[15rem] text-[0.68rem] font-bold leading-[1.35] uppercase tracking-[0.14em] sm:max-w-[20rem] lg:max-w-[13rem] xl:max-w-[20rem] xl:text-[0.7rem] 2xl:max-w-[26rem]">
+            <span className="block max-w-[15rem] text-caption font-bold uppercase tracking-[0.14em] sm:max-w-[20rem] lg:max-w-[13rem] xl:max-w-[20rem] 2xl:max-w-[26rem]">
               {site.name}
             </span>
-            <span className="mt-1 block text-[0.6rem] uppercase tracking-[0.26em] text-sage">
+            <span className="mt-1 block label-caps text-sage">
               {site.location}
             </span>
           </span>
@@ -112,7 +112,7 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 aria-current={active ? 'page' : undefined}
-                className={`group relative whitespace-nowrap text-[0.64rem] font-bold uppercase tracking-[0.14em] transition-colors duration-200 hover:text-forest ${
+                className={`group relative whitespace-nowrap label-caps transition-colors duration-200 hover:text-forest ${
                   active ? 'text-forest' : 'text-walnut/75'
                 }`}
               >
@@ -155,7 +155,7 @@ export function SiteHeader() {
                   <AnchorLink
                     href={item.href}
                     onNavigate={() => setOpen(false)}
-                    className="flex items-center justify-between py-3.5 text-[0.72rem] font-bold uppercase tracking-[0.18em] text-walnut"
+                    className="flex items-center justify-between py-4 label-caps text-walnut"
                   >
                     {item.label}
                     <span aria-hidden="true" className="text-gold">
@@ -168,7 +168,7 @@ export function SiteHeader() {
             <AnchorLink
               href={cta.href}
               onNavigate={() => setOpen(false)}
-              className="mt-5 flex items-center justify-center bg-forest px-6 py-4 text-[0.68rem] font-bold uppercase tracking-[0.2em] text-ivory"
+              className="btn mt-6 w-full bg-forest text-ivory hover:bg-walnut"
             >
               {cta.label}
             </AnchorLink>

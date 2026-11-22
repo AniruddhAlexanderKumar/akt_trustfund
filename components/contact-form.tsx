@@ -8,10 +8,10 @@ import { enquirySubjects } from '@/lib/enquiry'
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 type FieldErrors = Record<string, string>
 
-const labelClass = 'block text-[0.66rem] font-bold uppercase tracking-[0.18em] text-walnut'
+const labelClass = 'block label-caps text-walnut'
 const fieldClass =
-  'mt-2 w-full border border-forest/20 bg-white px-4 py-3 text-[0.95rem] text-charcoal transition-colors duration-200 placeholder:text-walnut/40 focus:border-forest focus:outline-none disabled:cursor-not-allowed disabled:border-forest/10 disabled:bg-forest/[0.03] disabled:text-walnut/45'
-const errorClass = 'mt-2 flex items-center gap-1.5 text-[0.78rem] text-[#8a3b2e]'
+  'mt-2 w-full border border-forest/20 bg-white px-4 py-3 text-body text-charcoal transition-colors duration-200 placeholder:text-walnut/40 focus:border-forest focus:outline-none disabled:cursor-not-allowed disabled:border-forest/10 disabled:bg-forest/[0.03] disabled:text-walnut/45'
+const errorClass = 'mt-2 flex items-center gap-2 text-caption text-clay'
 
 export function ContactForm({ accepting }: { accepting: boolean }) {
   const startedAt = useRef<number>(Date.now())
@@ -98,7 +98,7 @@ export function ContactForm({ accepting }: { accepting: boolean }) {
           />
           {errors.name ? (
             <p id="name-error" role="alert" className={errorClass}>
-              <AlertCircle className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+              <AlertCircle className="h-4 w-4 shrink-0" aria-hidden="true" />
               {errors.name}
             </p>
           ) : null}
@@ -121,7 +121,7 @@ export function ContactForm({ accepting }: { accepting: boolean }) {
           />
           {errors.email ? (
             <p id="email-error" role="alert" className={errorClass}>
-              <AlertCircle className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+              <AlertCircle className="h-4 w-4 shrink-0" aria-hidden="true" />
               {errors.email}
             </p>
           ) : null}
@@ -143,7 +143,7 @@ export function ContactForm({ accepting }: { accepting: boolean }) {
           />
           {errors.phone ? (
             <p id="phone-error" role="alert" className={errorClass}>
-              <AlertCircle className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+              <AlertCircle className="h-4 w-4 shrink-0" aria-hidden="true" />
               {errors.phone}
             </p>
           ) : null}
@@ -174,7 +174,7 @@ export function ContactForm({ accepting }: { accepting: boolean }) {
           </select>
           {errors.subject ? (
             <p id="subject-error" role="alert" className={errorClass}>
-              <AlertCircle className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+              <AlertCircle className="h-4 w-4 shrink-0" aria-hidden="true" />
               {errors.subject}
             </p>
           ) : null}
@@ -197,14 +197,14 @@ export function ContactForm({ accepting }: { accepting: boolean }) {
         />
         {errors.message ? (
           <p id="message-error" role="alert" className={errorClass}>
-            <AlertCircle className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+            <AlertCircle className="h-4 w-4 shrink-0" aria-hidden="true" />
             {errors.message}
           </p>
         ) : null}
       </div>
 
       <div>
-        <label htmlFor="consent" className="flex items-start gap-3 text-[0.86rem] leading-relaxed text-walnut/80">
+        <label htmlFor="consent" className="flex items-start gap-3 text-small text-walnut/80">
           <input
             id="consent"
             name="consent"
@@ -218,14 +218,14 @@ export function ContactForm({ accepting }: { accepting: boolean }) {
         </label>
         {errors.consent ? (
           <p id="consent-error" role="alert" className={errorClass}>
-            <AlertCircle className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+            <AlertCircle className="h-4 w-4 shrink-0" aria-hidden="true" />
             {errors.consent}
           </p>
         ) : null}
       </div>
 
       <div className="flex flex-col gap-4 border-t border-forest/12 pt-6 sm:flex-row sm:items-center sm:justify-between">
-        <p className="max-w-md text-[0.75rem] leading-relaxed text-walnut/55">
+        <p className="max-w-md text-caption text-walnut/55">
           {accepting
             ? 'Your enquiry is sent by email and is not stored on this website.'
             : 'The form is not yet open. Please email or call instead.'}
@@ -233,11 +233,11 @@ export function ContactForm({ accepting }: { accepting: boolean }) {
         <button
           type="submit"
           disabled={disabled}
-          className="inline-flex items-center justify-center gap-2.5 bg-forest px-7 py-3.5 text-[0.7rem] font-bold uppercase tracking-[0.2em] text-ivory transition-colors duration-200 hover:bg-walnut disabled:cursor-not-allowed disabled:bg-forest/25 disabled:text-forest/50"
+          className="btn w-full bg-forest text-ivory hover:bg-walnut disabled:bg-forest/25 disabled:text-forest/50 sm:w-auto"
         >
           {submitting ? (
             <>
-              <Loader2 className="h-3.5 w-3.5 animate-spin" aria-hidden="true" />
+              <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
               Sending
             </>
           ) : accepting ? (
@@ -250,14 +250,14 @@ export function ContactForm({ accepting }: { accepting: boolean }) {
 
       <div aria-live="polite" className="min-h-0">
         {status === 'success' && notice ? (
-          <p className="flex items-start gap-2.5 border border-forest/20 bg-white px-5 py-4 text-[0.85rem] leading-relaxed text-forest">
-            <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-forest" aria-hidden="true" />
+          <p className="flex items-start gap-3 border border-forest/20 bg-white px-5 py-4 text-small text-forest">
+            <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-forest" aria-hidden="true" />
             {notice}
           </p>
         ) : null}
         {status === 'error' && notice ? (
-          <p className="flex items-start gap-2.5 border border-[#8a3b2e]/25 bg-[#8a3b2e]/5 px-5 py-4 text-[0.85rem] leading-relaxed text-[#8a3b2e]">
-            <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
+          <p className="flex items-start gap-3 border border-clay/25 bg-clay/5 px-5 py-4 text-small text-clay">
+            <AlertCircle className="mt-1 h-4 w-4 shrink-0" aria-hidden="true" />
             {notice}
           </p>
         ) : null}

@@ -21,13 +21,13 @@ export function FinancialSummaryTable() {
           <tr className="border-b border-forest/20 bg-ivory/70">
             <th
               scope="col"
-              className="px-5 py-3.5 text-left text-[0.56rem] font-bold uppercase tracking-[0.2em] text-sage sm:px-6"
+              className="px-5 py-4 text-left label-caps text-sage sm:px-6"
             >
               Financial category
             </th>
             <th
               scope="col"
-              className="px-5 py-3.5 text-right text-[0.56rem] font-bold uppercase tracking-[0.2em] text-sage sm:px-6"
+              className="px-5 py-4 text-right label-caps text-sage sm:px-6"
             >
               Amount
             </th>
@@ -41,11 +41,11 @@ export function FinancialSummaryTable() {
             >
               <th
                 scope="row"
-                className="px-5 py-4 text-left text-[0.9rem] font-normal text-walnut/85 sm:px-6"
+                className="px-5 py-4 text-left text-small font-normal text-walnut/85 sm:px-6"
               >
                 {row.label}
               </th>
-              <td className="px-5 py-4 text-right text-[0.95rem] text-forest tabular-nums sm:px-6">
+              <td className="px-5 py-4 text-right text-body text-forest tabular-nums sm:px-6">
                 {formatINR(row.value)}
               </td>
             </tr>
@@ -59,13 +59,13 @@ export function FinancialSummaryTable() {
 // The header and totals rows are pinned inside the scrolling area, so the
 // column labels and the running totals stay in view while the entries scroll.
 const headCell =
-  'sticky top-0 z-10 bg-ivory px-4 py-3.5 text-left text-[0.56rem] font-bold uppercase tracking-[0.2em] text-sage shadow-[inset_0_-1px_0_rgba(40,59,53,0.18)] first:pl-6 last:pr-6'
-const bodyCell = 'px-4 py-5 text-[0.88rem] leading-relaxed text-walnut/85 first:pl-6 last:pr-6'
-const amountCell = 'px-4 py-5 text-right text-[0.9rem] text-forest tabular-nums last:pr-6'
+  'sticky top-0 z-10 bg-ivory px-4 py-4 text-left label-caps text-sage shadow-[inset_0_-1px_0_rgba(40,59,53,0.18)] first:pl-6 last:pr-6'
+const bodyCell = 'px-4 py-5 text-small text-walnut/85 first:pl-6 last:pr-6'
+const amountCell = 'px-4 py-5 text-right text-small text-forest tabular-nums last:pr-6'
 const footHeadCell =
-  'sticky bottom-0 z-10 bg-ivory px-4 py-4 pl-6 text-left text-[0.56rem] font-bold uppercase tracking-[0.2em] text-sage shadow-[inset_0_1px_0_rgba(40,59,53,0.18)]'
+  'sticky bottom-0 z-10 bg-ivory px-4 py-4 pl-6 text-left label-caps text-sage shadow-[inset_0_1px_0_rgba(40,59,53,0.18)]'
 const footCell =
-  'sticky bottom-0 z-10 bg-ivory px-4 py-4 text-right text-[0.9rem] text-forest tabular-nums shadow-[inset_0_1px_0_rgba(40,59,53,0.18)]'
+  'sticky bottom-0 z-10 bg-ivory px-4 py-4 text-right text-small text-forest tabular-nums shadow-[inset_0_1px_0_rgba(40,59,53,0.18)]'
 
 export function LedgerTable() {
   const { entries, totals } = ledger
@@ -85,19 +85,19 @@ export function LedgerTable() {
           </caption>
           <thead>
             <tr>
-              <th scope="col" className={`${headCell} w-[8.5rem]`}>
+              <th scope="col" className={`${headCell} w-34`}>
                 Date
               </th>
               <th scope="col" className={headCell}>
                 Reference
               </th>
-              <th scope="col" className={`${headCell} w-[8.5rem] text-right`}>
+              <th scope="col" className={`${headCell} w-34 text-right`}>
                 Contribution
               </th>
-              <th scope="col" className={`${headCell} w-[8.5rem] text-right`}>
+              <th scope="col" className={`${headCell} w-34 text-right`}>
                 Expenditure
               </th>
-              <th scope="col" className={`${headCell} w-[8.5rem] text-right`}>
+              <th scope="col" className={`${headCell} w-34 text-right`}>
                 Balance
               </th>
             </tr>
@@ -112,22 +112,22 @@ export function LedgerTable() {
                 >
                   <th
                     scope="row"
-                    className="px-4 py-5 pl-6 text-left text-[0.82rem] font-normal text-walnut/75 tabular-nums"
+                    className="px-4 py-5 pl-6 text-left text-small font-normal text-walnut/75 tabular-nums"
                   >
                     {formatLedgerDate(entry.date)}
                   </th>
                   <td className={bodyCell}>
-                    <span className="block text-[0.6rem] font-bold uppercase tracking-[0.18em] text-sage">
+                    <span className="block label-caps text-sage">
                       {entry.reference}
                     </span>
-                    <span className="mt-1 block text-[0.9rem] text-forest">{entry.label}</span>
+                    <span className="mt-1 block text-small text-forest">{entry.label}</span>
                     {entry.note ? (
-                      <span className="mt-1 block text-[0.78rem] text-walnut/60">{entry.note}</span>
+                      <span className="mt-1 block text-caption text-walnut/60">{entry.note}</span>
                     ) : null}
                     {entry.evidence ? (
                       <a
                         href={entry.evidence.href}
-                        className="mt-2 inline-flex items-center gap-1.5 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-walnut/70 underline decoration-gold/60 underline-offset-4 transition-colors hover:text-forest"
+                        className="mt-2 inline-flex items-center gap-2 label-caps text-walnut/70 underline decoration-gold/60 underline-offset-4 transition-colors hover:text-forest"
                       >
                         <FileText className="h-3 w-3" aria-hidden="true" />
                         {entry.evidence.label}
@@ -146,10 +146,10 @@ export function LedgerTable() {
             ) : (
               <tr>
                 <td colSpan={5} className="px-6 py-12 text-center">
-                  <p className="font-serif text-[1.15rem] leading-snug text-forest">
+                  <p className="font-serif heading-4 text-forest">
                     No verified transactions have been recorded yet.
                   </p>
-                  <p className="mx-auto mt-2 max-w-md text-[0.82rem] leading-relaxed text-walnut/60">
+                  <p className="mx-auto mt-2 max-w-md text-small text-walnut/60">
                     The ledger opens with its first verified entry.
                   </p>
                 </td>
@@ -170,7 +170,7 @@ export function LedgerTable() {
         </table>
       </div>
 
-      <p className="border-t border-forest/10 bg-ivory/40 px-6 py-3 text-[0.7rem] leading-relaxed text-walnut/55">
+      <p className="border-t border-forest/10 bg-ivory/40 px-6 py-3 text-caption text-walnut/55">
         Scroll the ledger for every entry; the headings and totals stay in view.
       </p>
     </div>
