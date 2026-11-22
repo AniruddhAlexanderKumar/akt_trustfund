@@ -34,7 +34,7 @@ export function Memory() {
                 key={paragraph}
                 className={
                   index === 0
-                    ? 'font-serif text-[1.3rem] leading-[1.65] text-walnut'
+                    ? 'drop-cap font-serif text-[1.3rem] leading-[1.65] text-walnut'
                     : 'body-copy'
                 }
               >

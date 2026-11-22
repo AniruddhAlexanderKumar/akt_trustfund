@@ -1,4 +1,3 @@
-import { ShieldCheck } from 'lucide-react'
 import { FundraisingTracker } from '@/components/fundraising-tracker'
 import { FinancialSummaryTable, LedgerTable } from '@/components/ledger-table'
 import { Eyebrow } from '@/components/section-heading'
@@ -21,7 +20,7 @@ export function Transparency() {
         </div>
 
         <div className="mt-12 max-w-2xl" data-reveal>
-          <h3 className="text-[0.56rem] font-bold uppercase tracking-[0.24em] text-sage">
+          <h3 className="label-caps text-sage">
             Financial summary
           </h3>
           <div className="mt-4">
@@ -30,7 +29,7 @@ export function Transparency() {
         </div>
 
         <div className="mt-12" data-reveal data-reveal-delay="1">
-          <h3 className="text-[0.56rem] font-bold uppercase tracking-[0.24em] text-sage">
+          <h3 className="label-caps text-sage">
             Transaction ledger
           </h3>
           <div className="mt-4">
@@ -40,15 +39,13 @@ export function Transparency() {
 
         <FundraisingTracker className="mt-12" />
 
-        <ul className="mt-10 grid gap-x-10 gap-y-5 border-t border-forest/12 pt-8 sm:grid-cols-2">
+        <ul className="mt-10 grid gap-x-12 border-t border-forest/15 sm:grid-cols-2">
           {initiative.ledgerRules.map((rule) => (
-            <li key={rule} className="flex gap-3">
-              <ShieldCheck
-                className="mt-0.5 h-4 w-4 shrink-0 text-gold"
-                aria-hidden="true"
-                strokeWidth={1.6}
-              />
-              <span className="text-[0.85rem] leading-[1.8] text-walnut/75">{rule}</span>
+            <li
+              key={rule}
+              className="border-b border-forest/10 py-4 text-[0.85rem] leading-[1.78] text-walnut/75"
+            >
+              {rule}
             </li>
           ))}
         </ul>

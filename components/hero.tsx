@@ -1,9 +1,14 @@
 import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import { Cta } from '@/components/cta'
+import { formatINR, initiative } from '@/lib/initiative'
+import { ledger } from '@/lib/initiative-ledger'
 import { hero } from '@/lib/site'
 
 export function Hero() {
+  const { totals, entries } = ledger
+  const contributions = entries.filter((entry) => entry.kind === 'contribution').length
+
   return (
     <section
       id="home"
@@ -64,6 +69,19 @@ export function Hero() {
             {hero.secondaryCta.label}
           </Cta>
         </div>
+
+        <p
+          className="rise mt-12 max-w-2xl border-t border-ivory/20 pt-5 text-[0.76rem] leading-relaxed tracking-[0.04em] text-ivory/60"
+          style={{ animationDelay: '340ms' }}
+        >
+          <span className="text-ivory tabular-nums">
+            {formatINR(totals.contributed)} of {formatINR(initiative.targetAmount)}
+          </span>{' '}
+          raised
+          {contributions > 0
+            ? ` · ${contributions} verified contribution${contributions === 1 ? '' : 's'}`
+            : ' · no verified contributions yet'}
+        </p>
       </div>
     </section>
   )

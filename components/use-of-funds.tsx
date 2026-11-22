@@ -3,7 +3,7 @@ import { initiative } from '@/lib/initiative'
 
 export function UseOfFunds() {
   return (
-    <section id="use-of-funds" aria-labelledby="use-heading" className="section bg-ivory">
+    <section id="use-of-funds" aria-labelledby="use-heading" className="section-tight bg-ivory">
       <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-4" data-reveal>
           <Eyebrow>Use of funds</Eyebrow>
@@ -14,28 +14,16 @@ export function UseOfFunds() {
         </div>
 
         <div className="lg:col-span-7 lg:col-start-6" data-reveal data-reveal-delay="1">
-          <ul className="border-y border-forest/12">
-            {initiative.useOfFunds.map((item, index) => (
-              <li
-                key={item.title}
-                className={`grid gap-2 py-6 sm:grid-cols-[2.5rem_1fr] sm:gap-6 ${
-                  index < initiative.useOfFunds.length - 1 ? 'border-b border-forest/10' : ''
-                }`}
-              >
-                <span className="font-serif text-[1rem] text-gold tabular-nums">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <div>
-                  <h3 className="font-serif text-[1.25rem] leading-snug text-forest">
-                    {item.title}
-                  </h3>
-                  <p className="mt-1.5 text-[0.88rem] leading-relaxed text-walnut/75">{item.body}</p>
-                </div>
+          <ul className="grid border-t border-forest/15 sm:grid-cols-2 sm:gap-x-10">
+            {initiative.useOfFunds.map((item) => (
+              <li key={item.title} className="border-b border-forest/10 py-6">
+                <h3 className="font-serif text-[1.2rem] leading-snug text-forest">{item.title}</h3>
+                <p className="mt-2 text-[0.86rem] leading-[1.75] text-walnut/75">{item.body}</p>
               </li>
             ))}
           </ul>
 
-          <p className="mt-8 border-l-2 border-gold pl-5 text-[0.84rem] leading-relaxed text-walnut/70">
+          <p className="mt-8 max-w-[46ch] border-l-2 border-gold pl-5 text-[0.84rem] leading-relaxed text-walnut/70">
             {initiative.useOfFundsNote}
           </p>
         </div>
