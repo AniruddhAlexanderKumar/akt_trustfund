@@ -20,20 +20,33 @@ export function Campaign() {
         </div>
 
         {/* How the money moves from a contributor to the student */}
-        <div className="mt-16" data-reveal data-reveal-delay="1">
-          <p className="text-[0.56rem] font-bold uppercase tracking-[0.24em] text-sage">
-            {initiative.processHeading}
-          </p>
-          <ol className="mt-6 grid gap-x-10 gap-y-8 border-t border-forest/15 pt-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div
+          className="mt-16 grid gap-10 border-t border-forest/15 pt-10 lg:grid-cols-12 lg:gap-16"
+          data-reveal
+          data-reveal-delay="1"
+        >
+          <div className="lg:col-span-4">
+            <p className="label-caps text-sage">
+              {initiative.processHeading}
+            </p>
+            <h3 className="mt-4 max-w-[16ch] font-serif text-[clamp(1.45rem,2.2vw,1.85rem)] leading-[1.25] text-forest">
+              {initiative.processTitle}
+            </h3>
+          </div>
+
+          <ol className="lg:col-span-7 lg:col-start-6">
             {initiative.process.map((step, index) => (
-              <li key={step.title}>
-                <span className="font-serif text-[1rem] text-gold tabular-nums">
+              <li
+                key={step.title}
+                className="grid grid-cols-[2.25rem_1fr] gap-x-5 border-b border-forest/10 py-5 first:pt-0 last:border-b-0 last:pb-0"
+              >
+                <span className="pt-1 font-serif text-[0.95rem] leading-none text-gold tabular-nums">
                   {String(index + 1).padStart(2, '0')}
                 </span>
-                <h3 className="mt-2 font-serif text-[1.15rem] leading-snug text-forest">
-                  {step.title}
-                </h3>
-                <p className="mt-2 text-[0.86rem] leading-[1.75] text-walnut/75">{step.body}</p>
+                <div>
+                  <h4 className="font-serif text-[1.15rem] leading-snug text-forest">{step.title}</h4>
+                  <p className="mt-1.5 text-[0.87rem] leading-[1.7] text-walnut/75">{step.body}</p>
+                </div>
               </li>
             ))}
           </ol>

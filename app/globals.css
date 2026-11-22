@@ -102,11 +102,6 @@
     letter-spacing: -0.012em;
   }
 
-  .heading-3 {
-    font-size: clamp(1.4rem, 2vw, 1.78rem);
-    line-height: 1.22;
-  }
-
   .lede {
     font-size: clamp(1.02rem, 1.15vw, 1.18rem);
     line-height: 1.75;
@@ -118,10 +113,30 @@
     color: color-mix(in srgb, var(--color-walnut) 92%, transparent);
   }
 
-  .hairline {
-    height: 1px;
-    width: 100%;
-    background-color: color-mix(in srgb, var(--color-forest) 15%, transparent);
+  /* One definition for the small-caps labels used above tables and figures. */
+  .label-caps {
+    font-size: 0.56rem;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  /* Quieter rhythm for secondary sections, so the page is not a run of
+     identically spaced bands. */
+  .section-tight {
+    padding-block: clamp(3rem, 5.5vw, 4.75rem);
+  }
+
+  /* Editorial drop cap for the memorial lede. */
+  .drop-cap::first-letter {
+    float: left;
+    padding: 0.08em 0.1em 0 0;
+    font-family: var(--font-serif);
+    font-size: 3.15em;
+    font-weight: 500;
+    line-height: 0.8;
+    color: var(--color-forest);
   }
 
   .hairline-light {

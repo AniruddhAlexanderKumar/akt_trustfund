@@ -171,8 +171,7 @@ export function LedgerTable() {
       </div>
 
       <p className="border-t border-forest/10 bg-ivory/40 px-6 py-3 text-[0.7rem] leading-relaxed text-walnut/55">
-        Scroll inside the ledger to read every entry — the column headings and the totals stay in
-        view. On a narrow screen, scroll sideways for all columns.
+        Scroll the ledger for every entry; the headings and totals stay in view.
       </p>
     </div>
   )

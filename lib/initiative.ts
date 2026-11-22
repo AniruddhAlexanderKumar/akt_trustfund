@@ -8,11 +8,8 @@
 
 export const initiative = {
   eyebrow: 'First initiative',
-  name: "One Student's Education",
   headline: 'One Student. A Better Educational Opportunity.',
-  status: 'Independently coordinated charitable initiative',
   targetAmount: 50000,
-  beneficiaries: 1,
   location: 'Jamshedpur, Jharkhand, India',
 
   intro: [
@@ -22,6 +19,7 @@ export const initiative = {
   ],
 
   processHeading: 'How it works',
+  processTitle: 'From a contribution to a paid fee.',
   process: [
     {
       title: 'A contribution is made',

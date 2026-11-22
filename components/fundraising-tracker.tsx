@@ -28,7 +28,7 @@ export function FundraisingTracker({ className = '' }: { className?: string }) {
           <p className="text-[0.5rem] font-bold uppercase tracking-[0.26em] text-ivory/45">
             First initiative
           </p>
-          <p className="mt-2 text-[0.56rem] font-bold uppercase tracking-[0.24em] text-gold/80">
+          <p className="mt-2 label-caps text-gold/80">
             Fundraising target
           </p>
           <p className="mt-4 font-serif text-[clamp(2.6rem,5vw,3.9rem)] leading-none text-ivory tabular-nums">
@@ -37,8 +37,7 @@ export function FundraisingTracker({ className = '' }: { className?: string }) {
           <p className="mt-3 text-[0.62rem] font-bold uppercase tracking-[0.24em] text-ivory/50">
             INR
           </p>
-          <p className="mt-7 inline-flex items-center gap-2.5 border border-gold/35 px-3.5 py-2 text-[0.54rem] font-bold uppercase tracking-[0.22em] text-gold">
-            <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-gold" />
+          <p className="mt-7 inline-block border border-gold/35 px-3.5 py-2 text-[0.54rem] font-bold uppercase tracking-[0.22em] text-gold">
             {status}
           </p>
         </div>
