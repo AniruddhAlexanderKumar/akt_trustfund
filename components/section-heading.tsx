@@ -13,7 +13,7 @@ export function Eyebrow({
 }) {
   return (
     <p
-      className={`eyebrow flex items-center gap-3 ${
+      className={`label-caps flex items-center gap-3 ${
         tone === 'light' ? 'text-gold' : 'text-sage'
       } ${className}`}
     >

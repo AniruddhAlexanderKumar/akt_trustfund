@@ -16,7 +16,7 @@ export default function NotFound() {
         <h1 id="not-found-heading" className="display-2 mt-6 text-forest">
           This page could not be found.
         </h1>
-        <p className="body-copy mt-7 max-w-[52ch]">
+        <p className="body-copy mt-7 measure">
           The address you followed may have changed. The website now describes the foundation&rsquo;s
           first initiative: raising ₹50,000 to support one student&rsquo;s education in Jamshedpur.
         </p>
@@ -31,7 +31,7 @@ export default function NotFound() {
             Contact
           </Cta>
         </div>
-        <p className="mt-8 text-[0.8rem] text-walnut/60">
+        <p className="mt-8 text-small text-walnut/60">
           If you followed a link from this website, please{' '}
           <AnchorLink href="/#contact" className="underline underline-offset-2 hover:text-forest">
             let us know

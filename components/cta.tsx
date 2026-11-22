@@ -4,12 +4,12 @@ import { AnchorLink } from '@/components/anchor-link'
 type Variant = 'gold' | 'light' | 'dark'
 
 const base =
-  'group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 text-[0.7rem] font-bold uppercase tracking-[0.2em] transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-55'
+  'btn group'
 
 const variants: Record<Variant, string> = {
-  gold: 'bg-gold text-forest hover:bg-[#e7d7b3]',
-  light: 'border border-ivory/35 text-ivory hover:border-gold hover:text-gold',
-  dark: 'border border-forest/25 text-forest hover:border-forest hover:bg-forest hover:text-ivory',
+  gold: 'btn-gold',
+  light: 'btn-light',
+  dark: 'btn-dark',
 }
 
 export function Cta({

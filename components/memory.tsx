@@ -22,19 +22,19 @@ export function Memory() {
       <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-5" data-reveal>
           <Eyebrow>{memory.eyebrow}</Eyebrow>
-          <h2 id="memory-heading" className="display-2 mt-6 max-w-[14ch] text-forest">
+          <h2 id="memory-heading" className="display-2 mt-6 measure-heading text-forest">
             {memory.heading}
           </h2>
         </div>
 
         <div className="lg:col-span-6 lg:col-start-7" data-reveal data-reveal-delay="1">
-          <div className="max-w-[58ch] space-y-5">
+          <div className="measure space-y-5">
             {memory.paragraphs.map((paragraph, index) => (
               <p
                 key={paragraph}
                 className={
                   index === 0
-                    ? 'drop-cap font-serif text-[1.3rem] leading-[1.65] text-walnut'
+                    ? 'drop-cap font-serif heading-4 text-walnut'
                     : 'body-copy'
                 }
               >

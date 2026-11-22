@@ -23,13 +23,13 @@ export function InitiativeProgress({
     <div className={className}>
       <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
         <p
-          className={`font-serif text-[1.9rem] leading-none tabular-nums ${
+          className={`font-serif figure leading-none tabular-nums ${
             dark ? 'text-ivory' : 'text-forest'
           }`}
         >
           {formatINR(raised)}
           <span
-            className={`ml-2.5 font-sans text-[0.56rem] font-bold uppercase tracking-[0.2em] ${
+            className={`ml-3 font-sans label-caps ${
               dark ? 'text-ivory/55' : 'text-sage'
             }`}
           >
@@ -37,7 +37,7 @@ export function InitiativeProgress({
           </span>
         </p>
         <p
-          className={`text-[0.56rem] font-bold uppercase tracking-[0.2em] tabular-nums ${
+          className={`label-caps tabular-nums ${
             dark ? 'text-ivory/55' : 'text-sage'
           }`}
         >
@@ -52,7 +52,7 @@ export function InitiativeProgress({
         aria-valuenow={raised}
         aria-valuetext={`${formatINR(raised)} raised of ${formatINR(target)}`}
         aria-label="Contributions received towards the ₹50,000 target"
-        className={`mt-4 h-[3px] w-full ${dark ? 'bg-ivory/15' : 'bg-forest/12'}`}
+        className={`mt-4 h-1 w-full ${dark ? 'bg-ivory/15' : 'bg-forest/12'}`}
       >
         <div
           className="h-full bg-gold transition-[width] duration-700 ease-out"

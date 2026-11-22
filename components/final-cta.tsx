@@ -15,17 +15,17 @@ export function FinalCta() {
         <span aria-hidden="true" className="mx-auto block h-px w-16 bg-gold/60" />
         <h2
           id="cta-heading"
-          className="mx-auto mt-9 max-w-[22ch] font-serif text-[clamp(1.5rem,3.2vw,2.5rem)] leading-[1.25] tracking-[0.05em] text-ivory uppercase"
+          className="mx-auto mt-9 measure-heading heading-2 tracking-[0.05em] text-ivory uppercase"
         >
           {finalCta.heading}
         </h2>
-        <p className="lede mx-auto mt-7 max-w-xl text-ivory/70">{finalCta.body}</p>
+        <p className="text-lead mx-auto mt-7 max-w-xl text-ivory/70">{finalCta.body}</p>
 
         <div className="mt-11 flex justify-center">
           <Cta href={finalCta.primary.href} variant="gold">
             {finalCta.primary.label}
             <ArrowRight
-              className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"
+              className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
               aria-hidden="true"
             />
           </Cta>
